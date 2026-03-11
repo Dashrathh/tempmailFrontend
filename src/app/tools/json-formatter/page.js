@@ -299,7 +299,7 @@ export default function JsonFormatter() {
 
                         <div className="border-l-4 border-blue-500 pl-4 py-1">
                             <strong className="text-slate-800">Minified JSON:</strong>
-                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> {"name":"John","age":30,"city":"New York"}</p>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> {'{"name":"John","age":30,"city":"New York"}'}</p>
                         </div>
                         <div className="border-l-4 border-blue-500 pl-4 py-1">
                             <strong className="text-slate-800">Formatted JSON:</strong>
@@ -307,7 +307,7 @@ export default function JsonFormatter() {
                         </div>
                         <div className="border-l-4 border-blue-500 pl-4 py-1">
                             <strong className="text-slate-800">Error Detection:</strong>
-                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Catching a trailing comma {"test": 123,} and flagging it as invalid.</p>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Catching a trailing comma {'{"test": 123,}'} and flagging it as invalid.</p>
                         </div>
                         </div>
                     </section>

@@ -307,11 +307,11 @@ export default function JwtDecoder() {
                         </div>
                         <div className="border-l-4 border-blue-500 pl-4 py-1">
                             <strong className="text-slate-800">Decoded Header:</strong>
-                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> {"alg": "HS256", "typ": "JWT"}</p>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> {'{"alg": "HS256", "typ": "JWT"}'}</p>
                         </div>
                         <div className="border-l-4 border-blue-500 pl-4 py-1">
                             <strong className="text-slate-800">Decoded Payload:</strong>
-                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> {"userId": 123, "role": "admin", "exp": 173110290}</p>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> {'{"userId": 123, "role": "admin", "exp": 173110290}'}</p>
                         </div>
                         </div>
                     </section>
