@@ -48,9 +48,7 @@ export default function QRCodeGenerator() {
                     <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-4 text-center">
                         QR Code Generator
                     </h1>
-                    <p className="text-slate-600 mb-8 text-center max-w-xl">
-                        Convert links, plain text, or emails into highly scannable QR codes. Customize colors, sizes, and download instantly without limits.
-                    </p>
+                    <p className="text-slate-600 mb-8 text-center max-w-xl">Convert links, plain text, or emails into highly scannable QR codes. Customize colors, sizes, and download instantly without limits. Free, no signup required.</p>
 
                     <div className="w-full bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden flex flex-col lg:flex-row">
 
@@ -178,69 +176,178 @@ export default function QRCodeGenerator() {
                     </div>
                 </div>
 
+                
                 {/* SEO & EDUCATIONAL SECTION */}
-                <article className="max-w-3xl border-t border-slate-200 pt-16 mx-auto">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-4">How to create the perfect QR Code</h2>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                        QR Codes (Quick Response Codes) have become an essential bridge between the physical and digital worlds. Whether you are printing flyers, building a digital menu for a restaurant, or sharing a simple Wi-Fi password, generating a high-quality QR code makes it effortless for smartphone users to connect with your content.
-                    </p>
+                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto mt-12 w-full">
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">What is a QR Code Generator?</h2>
+                        <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                            <p>A QR Code Generator is a dynamic visual tool that converts any text, URL, email address, or phone number into a scannable 2D barcode (Quick Response code). You can customize the look and feel, and download the final code instantly.</p>
+                            <p>Typing out long URLs from a physical poster or a computer screen to a mobile phone is frustrating. A QR code bridges the gap between the physical and digital worlds, allowing smartphone users to simply point their camera and instantly open your link, saving time and preventing typos.</p>
+                        </div>
+                    </section>
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Best Practices for Custom QR Codes</h3>
-                    <div className="grid sm:grid-cols-2 gap-6 mb-8 mt-6">
-                        <div className="flex gap-4">
-                            <div className="p-3 bg-blue-50 rounded-xl h-fit">
-                                <Palette className="w-6 h-6 text-blue-600" />
-                            </div>
-                            <div>
-                                <h4 className="font-semibold text-slate-800">Ensure High Contrast</h4>
-                                <p className="text-sm text-slate-600 mt-1">Always use a dark foreground color on a light background. Low contrast QR codes often fail to scan under different lighting conditions.</p>
-                            </div>
-                        </div>
-                        <div className="flex gap-4">
-                            <div className="p-3 bg-emerald-50 rounded-xl h-fit">
-                                <ShieldCheck className="w-6 h-6 text-emerald-600" />
-                            </div>
-                            <div>
-                                <h4 className="font-semibold text-slate-800">Use High Error Correction</h4>
-                                <p className="text-sm text-slate-600 mt-1">If your code might get scratched or you plan to add a logo later, use the 'H' (High) Error Correction Level which tolerates up to 30% damage.</p>
-                            </div>
-                        </div>
-                        <div className="flex gap-4">
-                            <div className="p-3 bg-purple-50 rounded-xl h-fit">
-                                <Smartphone className="w-6 h-6 text-purple-600" />
-                            </div>
-                            <div>
-                                <h4 className="font-semibold text-slate-800">Testing is Mandatory</h4>
-                                <p className="text-sm text-slate-600 mt-1">Always scan your downloaded QR code with a standard smartphone camera before mass-printing it on marketing materials.</p>
-                            </div>
-                        </div>
-                        <div className="flex gap-4">
-                            <div className="p-3 bg-orange-50 rounded-xl h-fit">
-                                <Type className="w-6 h-6 text-orange-600" />
-                            </div>
-                            <div>
-                                <h4 className="font-semibold text-slate-800">Keep Links Short</h4>
-                                <p className="text-sm text-slate-600 mt-1">Long text and complex URLs create denser QR codes which are harder for older smartphone cameras to instantly read.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">How to Use QR Code Generator</h2>
+                        <ul className="space-y-4">
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Frequently Asked Questions</h3>
-                    <div className="space-y-6">
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Do these QR codes expire?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                No, they never expire. The QR codes generated by our tool are static. They directly encode your destination URL or text within the image itself without relying on intermediary tracking servers.
-                            </p>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                1
+                            </div>
+                            <p className="text-slate-600 mt-1">Enter your desired text, website URL, or email address into the input field.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                2
+                            </div>
+                            <p className="text-slate-600 mt-1">Watch the QR code generate automatically in real-time.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                3
+                            </div>
+                            <p className="text-slate-600 mt-1">Customize the background color and the foreground color to match your brand.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                4
+                            </div>
+                            <p className="text-slate-600 mt-1">Use the 'Padding' slider to adjust the quiet zone around the QR code.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                5
+                            </div>
+                            <p className="text-slate-600 mt-1">Click the 'Download' button to save the QR code as a high-quality PNG image.</p>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Features</h2>
+                        <ul className="grid md:grid-cols-2 gap-6">
+
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">100% Free:</strong>
+                                <span className="text-slate-600"> Unlimited use without any hidden fees or premium locks.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Signup:</strong>
+                                <span className="text-slate-600"> Instantly start using the utility without registering an account.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Works in Browser:</strong>
+                                <span className="text-slate-600"> Fully client-side processing natively in your web browser.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Data Stored:</strong>
+                                <span className="text-slate-600"> Your inputs are not saved, logged, or recorded on any server.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Mobile Friendly:</strong>
+                                <span className="text-slate-600"> Perfect responsive design for smartphones and tablets.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Instant Results:</strong>
+                                <span className="text-slate-600"> Lightning fast execution with zero loading screens.</span>
+                            </div>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Examples</h2>
+                        <div className="space-y-4">
+
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Website Links:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> https://tempmail.sbs &rarr; Scans directly to the website.</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Are they free to use commercially?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Yes. You have 100% free commercial rights. You can use these downloaded QR codes on business cards, billboards, product packaging, and more without owing us any royalties.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Contact Info:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> admin@tempmail.sbs &rarr; Scans to open the default email app.</p>
                         </div>
-                    </div>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">WiFi Passwords:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Convert plain text WiFi credentials into a scannable format for guests.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-4">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is this tool free?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, our QR code generator is completely free.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is my data safe?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, the code is generated locally in your browser. Your links are not tracked.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Does it work on mobile?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, you can generate and download QR codes directly to your phone.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Do these QR codes expire?</h4>
+                            <p className="text-slate-600 leading-relaxed">No! The generated QR codes are static and will work permanently as long as the destination URL remains active.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Can I use these for commercial purposes?</h4>
+                            <p className="text-slate-600 leading-relaxed">Absolutely. You can print them on business cards, menus, or promotional flyers without any attribution.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Related Tools</h2>
+                        <div className="grid sm:grid-cols-3 gap-4">
+
+                        <a href="/tools/url-encoder-decoder" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">URL Encoder & Decoder &rarr;</span>
+                        </a>
+                        <a href="/tools/uuid-generator" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">UUID Generator &rarr;</span>
+                        </a>
+                        <a href="/tools/base64-encoder-decoder" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Base64 Encoder & Decoder &rarr;</span>
+                        </a>
+                        </div>
+                    </section>
                 </article>
+            
             </div>
         </div>
     );

@@ -3,7 +3,7 @@ export const metadata = {
     description:
         "Learn how TempuMail works — auto-generate temp emails, receive emails instantly, and auto-expire for privacy.",
     openGraph: {
-        title: "How It Works - TempMail.sbs",
+        title: "How It Works",
         description: "Learn how TempuMail works — auto-generate temp emails, receive emails instantly, and auto-expire for privacy.",
     },
 };

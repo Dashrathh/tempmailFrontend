@@ -70,9 +70,7 @@ export default function EmailBreachChecker() {
                     <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-4 text-center">
                         Email Data Breach Checker
                     </h1>
-                    <p className="text-slate-600 mb-8 text-center max-w-xl">
-                        Find out if your email address has been compromised in any public data breaches. Powered by the <strong>Have I Been Pwned</strong> API.
-                    </p>
+                    <p className="text-slate-600 mb-8 text-center max-w-xl">Find out if your email address has been compromised in any public data breaches. Powered by the <strong>Have I Been Pwned</strong> API. Free, no signup required.</p>
 
                     <div className="w-full max-w-3xl bg-white rounded-3xl border border-slate-200 shadow-xl p-6 md:p-10 relative overflow-hidden">
 
@@ -219,43 +217,178 @@ export default function EmailBreachChecker() {
                     </div>
                 </div>
 
+                
                 {/* SEO & EDUCATIONAL SECTION */}
-                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-4">What is a Data Breach?</h2>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                        A data breach is a security incident where sensitive, protected, or confidential data is copied, transmitted, viewed, stolen, or used by an individual unauthorized to do so. These incidents can happen to massive companies (like LinkedIn, Adobe, or Yahoo) or smaller independent websites. When a breach happens, millions of email addresses, passwords, phone numbers, and personal details are often posted online for anyone to see or sold on the dark web.
-                    </p>
+                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto mt-12 w-full">
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">What is a Email Breach Checker?</h2>
+                        <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                            <p>The Email Breach Checker connects to massive cyber-security databases to determine if your personal email address has been compromised, leaked, or stolen in a known corporate data breach.</p>
+                            <p>Companies get hacked every day. When a service you use gets breached, hackers dump your email address and password onto the dark web, allowing cybercriminals to attempt unauthorized logins. This tool safely searches these hacked databases so you know if it's time to change your passwords.</p>
+                        </div>
+                    </section>
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">What should I do if my Email was "Pwned"?</h3>
-                    <ul className="space-y-3 mb-8 text-slate-600 list-disc pl-5">
-                        <li><strong className="text-slate-800">Change Compromised Passwords:</strong> Look at the compromised data list above. If passwords were leaked alongside your email from a specific website, immediately change your password on that service.</li>
-                        <li><strong className="text-slate-800">Stop Password Reuse:</strong> If you use the same password on multiple websites, change it everywhere. Hackers will actively try that leaked email/password combination on popular platforms like Amazon, Netflix, and online Banking systems.</li>
-                        <li><strong className="text-slate-800">Enable Multi-Factor Authentication:</strong> Use 2FA on everything. This guarantees that even if a hacker has your email address and password, they cannot log into your account without physical access to your mobile phone.</li>
-                        <li><strong className="text-slate-800">Watch for Phishing Scams:</strong> If your email address is part of a public breach, you should be prepared for a potential increase in spam. Attackers may send cleverly disguised "phishing" emails to try and steal more details from you.</li>
-                    </ul>
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">How to Use Email Breach Checker</h2>
+                        <ul className="space-y-4">
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Frequently Asked Questions</h3>
-                    <div className="space-y-6">
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Where does this breach data come from?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                We securely utilize the official API provided by <strong>Have I Been Pwned</strong>, an industry-standard platform operated by cybersecurity expert Troy Hunt. It acts as the internet's most comprehensive index of verified, known data breaches.
-                            </p>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                1
+                            </div>
+                            <p className="text-slate-600 mt-1">Type your primary email address into the secure search box.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                2
+                            </div>
+                            <p className="text-slate-600 mt-1">Click 'Check Email' to initiate the database scan.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                3
+                            </div>
+                            <p className="text-slate-600 mt-1">If the result is green, your email is secure and not found in any public breaches.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                4
+                            </div>
+                            <p className="text-slate-600 mt-1">If the result is red, the tool will list exactly which companies were hacked in relation to your email.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                5
+                            </div>
+                            <p className="text-slate-600 mt-1">Take immediate action to change your password on any compromised websites.</p>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Features</h2>
+                        <ul className="grid md:grid-cols-2 gap-6">
+
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">100% Free:</strong>
+                                <span className="text-slate-600"> Unlimited use without any hidden fees or premium locks.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Signup:</strong>
+                                <span className="text-slate-600"> Instantly start using the utility without registering an account.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Works in Browser:</strong>
+                                <span className="text-slate-600"> Fully client-side processing natively in your web browser.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Data Stored:</strong>
+                                <span className="text-slate-600"> Your inputs are not saved, logged, or recorded on any server.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Mobile Friendly:</strong>
+                                <span className="text-slate-600"> Perfect responsive design for smartphones and tablets.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Instant Results:</strong>
+                                <span className="text-slate-600"> Lightning fast execution with zero loading screens.</span>
+                            </div>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Examples</h2>
+                        <div className="space-y-4">
+
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Safe Result:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Good news — no pwnage found!</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Why am I seeing strange company names I never signed up for?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Often, massive data brokers or advertising companies gather your information across the web. If <em>those</em> third-party companies get hacked, your email will appear in their leak, even if you never directly created an account with them.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Breached Result:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Flags that your email was compromised in the 2012 LinkedIn data leak.</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Is this tool safe to use?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Yes. The search happens securely over an encrypted HTTPS connection. Your email address is sent strictly to the official API to verify its status. We do not save, track, or share the emails you check, nor do we send spam.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Password Alert:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Alerts you if the breach also included unencrypted passwords.</p>
                         </div>
-                    </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-4">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is this tool free?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, checking your email security is 100% free.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is my data safe?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes. Your email is checked securely against public hashes. We do not store your email.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Does it work on mobile?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, you can check your accounts directly from your smartphone.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">What should I do if my email is breached?</h4>
+                            <p className="text-slate-600 leading-relaxed">Don't panic. Immediately change the password of that specific account, and ensure you use a brand new, unique password. Enable Two-Factor Authentication (2FA).</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Will you email me after I check?</h4>
+                            <p className="text-slate-600 leading-relaxed">No, we do not subscribe you to anything or use your email for marketing.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Related Tools</h2>
+                        <div className="grid sm:grid-cols-3 gap-4">
+
+                        <a href="/tools/password-breach-checker" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Password Breach Checker &rarr;</span>
+                        </a>
+                        <a href="/tools/password-generator" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Strong Password Generator &rarr;</span>
+                        </a>
+                        <a href="/tools/json-formatter" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">JSON Formatter &rarr;</span>
+                        </a>
+                        </div>
+                    </section>
                 </article>
+            
             </div>
         </div>
     );

@@ -72,9 +72,7 @@ export default function JsonFormatter() {
                     <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-4 text-center">
                         JSON Formatter & Validator
                     </h1>
-                    <p className="text-slate-600 mb-8 text-center max-w-xl">
-                        Clean, format, and validate your JSON data instantly. Works 100% in your browser without sending any data to our servers.
-                    </p>
+                    <p className="text-slate-600 mb-8 text-center max-w-xl">Clean, format, and validate your JSON data instantly. Works 100% in your browser without sending any data to our servers. Free, no signup required.</p>
 
                     {/* Status Bar */}
                     <div className="w-full mb-6">
@@ -186,61 +184,178 @@ export default function JsonFormatter() {
                     </div>
                 </div>
 
+                
                 {/* SEO & EDUCATIONAL SECTION */}
-                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-4">What is JSON?</h2>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                        JSON (JavaScript Object Notation) is a lightweight, text-based data interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It has become the de facto standard for transmitting data in web applications, typically between a web browser and a server via REST APIs or WebSockets.
-                    </p>
+                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto mt-12 w-full">
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">What is a JSON Formatter & Validator?</h2>
+                        <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                            <p>A JSON Formatter & Validator is an essential developer tool that takes raw, minified, or disorganized JSON data and converts it into a clean, human-readable, beautifully indented format. It also acts as a strict validator to catch syntax errors.</p>
+                            <p>When working with APIs or configuration files, JSON strings are usually minified into a single massive line of text to save bandwidth. Reading or debugging this is impossible for humans. Our tool instantly pretty-prints the JSON and highlights exactly where any syntax errors (like a missing comma) exist.</p>
+                        </div>
+                    </section>
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Why use a JSON Formatter?</h3>
-                    <ul className="space-y-3 mb-8 text-slate-600 list-disc pl-5">
-                        <li><strong className="text-slate-800">Readability:</strong> Raw JSON files or API responses often come minified (all in one line) to save bandwidth. Formatting (or "beautifying") adds proper indentation and line breaks, making it human-readable.</li>
-                        <li><strong className="text-slate-800">Debugging:</strong> When APIs fail or configuration files break, a JSON Validator instantly detects syntax errors like missing trailing commas, unquoted keys, or mismatched brackets.</li>
-                        <li><strong className="text-slate-800">Minification:</strong> If you are deploying an app and want to save network size, you can take formatted JSON and "minify" it to strip out all unnecessary whitespace before deployment.</li>
-                    </ul>
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">How to Use JSON Formatter & Validator</h2>
+                        <ul className="space-y-4">
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Common JSON Syntax Rules</h3>
-                    <div className="grid md:grid-cols-2 gap-8 mt-6 mb-8 bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                        <div>
-                            <h4 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
-                                <CheckCircle2 className="w-4 h-4 text-emerald-500" /> Do's
-                            </h4>
-                            <ul className="text-sm text-slate-600 space-y-2 mt-3 list-disc pl-4">
-                                <li>Always enclose property names (keys) in <strong>double quotes</strong>. (e.g., <code>"name": "John"</code>)</li>
-                                <li>Use curly braces <code>{`{}`}</code> to define objects.</li>
-                                <li>Use square brackets <code>[]</code> to define arrays.</li>
-                                <li>Values can be strings, numbers, booleans, null, arrays, or objects.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
-                                <AlertCircle className="w-4 h-4 text-red-500" /> Don'ts
-                            </h4>
-                            <ul className="text-sm text-slate-600 space-y-2 mt-3 list-disc pl-4">
-                                <li>Do not use single quotes (<code>'</code>) for keys or strings.</li>
-                                <li>Do not leave trailing commas after the last element in an array or object. This is the #1 cause of JSON syntax errors.</li>
-                                <li>JSON does not support comments natively (like <code>//</code> or <code>/* */</code>).</li>
-                            </ul>
-                        </div>
-                    </div>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                1
+                            </div>
+                            <p className="text-slate-600 mt-1">Paste your raw, messy, or minified JSON string into the input area.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                2
+                            </div>
+                            <p className="text-slate-600 mt-1">Click the 'Format JSON' button to beautify the code.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                3
+                            </div>
+                            <p className="text-slate-600 mt-1">Click 'Minify JSON' to compress it back into a single line for production use.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                4
+                            </div>
+                            <p className="text-slate-600 mt-1">If there is a syntax error, a red error box will display explaining the issue.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                5
+                            </div>
+                            <p className="text-slate-600 mt-1">Use the 'Copy' or 'Download' buttons to save your processed JSON.</p>
+                        </li>
+                        </ul>
+                    </section>
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Frequently Asked Questions</h3>
-                    <div className="space-y-6">
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Is this JSON Formatter secure?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Absolutely. Unlike many online tools that send your data to their backend servers for processing, our JSON Formatter operates entirely inside your browser locally using JavaScript's native <code>JSON</code> object. Your proprietary configuration files and API keys never leave your machine.
-                            </p>
+                    <section className="mb-12 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Features</h2>
+                        <ul className="grid md:grid-cols-2 gap-6">
+
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">100% Free:</strong>
+                                <span className="text-slate-600"> Unlimited use without any hidden fees or premium locks.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Signup:</strong>
+                                <span className="text-slate-600"> Instantly start using the utility without registering an account.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Works in Browser:</strong>
+                                <span className="text-slate-600"> Fully client-side processing natively in your web browser.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Data Stored:</strong>
+                                <span className="text-slate-600"> Your inputs are not saved, logged, or recorded on any server.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Mobile Friendly:</strong>
+                                <span className="text-slate-600"> Perfect responsive design for smartphones and tablets.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Instant Results:</strong>
+                                <span className="text-slate-600"> Lightning fast execution with zero loading screens.</span>
+                            </div>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Examples</h2>
+                        <div className="space-y-4">
+
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Minified JSON:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> {"name":"John","age":30,"city":"New York"}</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Can I upload a .json file directly?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Yes. You can click the "Upload File" button in the toolbar to load any text or JSON file straight from your computer into the editor without having to open it in a text editor first.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Formatted JSON:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Automatically adds line breaks and 2-space indents for readable hierarchy.</p>
                         </div>
-                    </div>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Error Detection:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Catching a trailing comma {"test": 123,} and flagging it as invalid.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-4">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is this tool free?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, the JSON formater is completely free to use.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is my data safe?</h4>
+                            <p className="text-slate-600 leading-relaxed">Absolutely. We know JSONs often contain API keys or secure data, so processing is handled entirely client-side without API calls.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Does it work on mobile?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, but for large JSON files, a desktop monitor provides a better viewing experience.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">How many spaces does it indent?</h4>
+                            <p className="text-slate-600 leading-relaxed">The tool currently formats your code with standard 2-space indentation.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Can it handle huge JSON files?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, modern browsers can process megabytes of JSON data locally in just a few milliseconds.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Related Tools</h2>
+                        <div className="grid sm:grid-cols-3 gap-4">
+
+                        <a href="/tools/jwt-decoder" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">JWT Decoder &rarr;</span>
+                        </a>
+                        <a href="/tools/base64-encoder-decoder" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Base64 Encoder & Decoder &rarr;</span>
+                        </a>
+                        <a href="/tools/uuid-generator" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">UUID Generator &rarr;</span>
+                        </a>
+                        </div>
+                    </section>
                 </article>
+            
             </div>
         </div>
     );

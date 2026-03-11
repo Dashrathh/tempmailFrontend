@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "Base64 Encoder & Decoder – Free Online Tool | TempMail.sbs",
+    title: "Base64 Encoder & Decoder – Free Online Tool",
     description: "Encode text to Base64 or decode Base64 strings instantly. 100% client-side, free and secure.",
     keywords: ["base64 encoder", "base64 decoder", "encode base64", "decode base64 online", "base64 converter", "developer tools"],
     alternates: {

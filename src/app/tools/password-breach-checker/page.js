@@ -83,9 +83,7 @@ export default function PasswordBreachChecker() {
                     <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-4 text-center">
                         Password Data Breach Scanner
                     </h1>
-                    <p className="text-slate-600 mb-8 text-center max-w-xl">
-                        Find out if your password has been exposed in a data breach. Powered securely by the <strong>Have I Been Pwned</strong> database.
-                    </p>
+                    <p className="text-slate-600 mb-8 text-center max-w-xl">Find out if your password has been exposed in a data breach. Powered securely by the <strong>Have I Been Pwned</strong> database. Free, no signup required.</p>
 
                     <div className="w-full max-w-2xl bg-white rounded-3xl border border-slate-200 shadow-xl p-6 md:p-10 relative overflow-hidden">
 
@@ -202,60 +200,178 @@ export default function PasswordBreachChecker() {
                     </div>
                 </div>
 
+                
                 {/* SEO & EDUCATIONAL SECTION */}
-                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-4">What does it mean to be "Pwned"?</h2>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                        In hacker culture, being <em>"pwned"</em> (pronounced like <em>owned</em>) means your data has been compromised or conquered by a malicious party. When a website gets hacked, the database of user accounts (often containing emails, usernames, and unencrypted passwords) is stolen and sold on the dark web or dumped on public forums.
-                        If your password is in one of these dumps, it has been "pwned."
-                    </p>
-
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">How does this tool check my password safely?</h3>
-                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 mt-4 mb-8">
-                        <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                            You might be wondering: <em>"Isn't it dangerous to type my password into a random website?"</em> Yes! Never trust random sites with your passwords. That is why our tool uses a sophisticated cryptographic technique called <strong>k-Anonymity</strong> to protect you.
-                        </p>
-                        <ol className="space-y-4 list-decimal pl-5 text-sm text-slate-700 font-medium">
-                            <li>When you type your password, your browser instantly runs a mathematical algorithm to convert it into a 40-character <strong>SHA-1 Hash</strong>. (e.g., <code>5BAA61E...</code>)</li>
-                            <li>The tool takes <strong>only the first 5 characters</strong> of that hash (e.g., <code>5BAA6</code>) and sends it to the Have I Been Pwned API.</li>
-                            <li>The API answers with a list of <em>hundreds</em> of breached passwords that just happen to share the same first 5 characters.</li>
-                            <li>Your browser then searches that downloaded list locally to see if the full 40-character hash matches.</li>
-                        </ol>
-                        <p className="text-sm border-l-4 border-emerald-500 text-emerald-700 bg-emerald-50 p-3 rounded-r-lg mt-5 font-semibold">
-                            Conclusion: The API server never knows your real password, and it never even sees your full hash. It is mathematically impossible for anyone tracking your network to intercept your password.
-                        </p>
-                    </div>
-
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">My password is pwned. What should I do?</h3>
-                    <ul className="space-y-3 mb-8 text-slate-600 list-disc pl-5">
-                        <li><strong className="text-red-700">Change it immediately:</strong> Anywhere you use that exact password, log in now and change it. Hackers use automated bots to test breached passwords across thousands of popular websites like Amazon, Netflix, and Gmail.</li>
-                        <li><strong className="text-slate-800">Stop reusing passwords:</strong> If one website is breached, your identical password on another website is at risk. Always use unique passwords.</li>
-                        <li><strong className="text-slate-800">Use a Password Manager:</strong> Because it is impossible to memorize 50 different 16-character passwords, use tools to generate and safely store them.</li>
-                        <li><strong className="text-slate-800">Turn on 2FA:</strong> Two-Factor Authentication (Using an app like Authy or Google Authenticator) ensures that even if a hacker has your password, they cannot log in without the code from your phone.</li>
-                    </ul>
-
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Frequently Asked Questions</h3>
-                    <div className="space-y-6">
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Where does this breach data come from?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                We rely on the publicly available, secure API provided by <strong>Have I Been Pwned (HIBP)</strong>, created by cybersecurity expert Troy Hunt. HIBP actively collects massive data dumps from known website breaches (such as LinkedIn, Apollo, MySpace) to help users protect themselves.
-                            </p>
+                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto mt-12 w-full">
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">What is a Password Breach Checker?</h2>
+                        <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                            <p>The Password Breach Checker verifies if a specific password string has ever been exposed in a historical data breach. It leverages k-Anonymity encryption to keep your query mathematically secure and untraceable.</p>
+                            <p>Many people reuse basic passwords like 'Welcome123'. Because hackers already possess massive databases containing billions of leaked passwords, they will test these against your accounts instantly. If your password has been seen in a breach, using it anywhere is highly dangerous.</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Does a "0 times" result mean my account is 100% safe?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Not necessarily. It only means that this specific password has <em>not yet</em> been found in <em>known, publicly published</em> data breaches. If a breach just happened yesterday and the data hasn't been uploaded to HIBP yet, it won't show up here.
-                            </p>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">How to Use Password Breach Checker</h2>
+                        <ul className="space-y-4">
+
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                1
+                            </div>
+                            <p className="text-slate-600 mt-1">Type the password you want to evaluate into the secure input.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                2
+                            </div>
+                            <p className="text-slate-600 mt-1">Click the 'Check Password' button.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                3
+                            </div>
+                            <p className="text-slate-600 mt-1">Behind the scenes, your password is mathematically hashed before leaving your browser.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                4
+                            </div>
+                            <p className="text-slate-600 mt-1">The tool tells you if the password has been breached, and exactly how many times hackers have seen it.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                5
+                            </div>
+                            <p className="text-slate-600 mt-1">If it's safe, you will see a green shield indicating zero matches.</p>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Features</h2>
+                        <ul className="grid md:grid-cols-2 gap-6">
+
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">100% Free:</strong>
+                                <span className="text-slate-600"> Unlimited use without any hidden fees or premium locks.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Signup:</strong>
+                                <span className="text-slate-600"> Instantly start using the utility without registering an account.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Works in Browser:</strong>
+                                <span className="text-slate-600"> Fully client-side processing natively in your web browser.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Data Stored:</strong>
+                                <span className="text-slate-600"> Your inputs are not saved, logged, or recorded on any server.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Mobile Friendly:</strong>
+                                <span className="text-slate-600"> Perfect responsive design for smartphones and tablets.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Instant Results:</strong>
+                                <span className="text-slate-600"> Lightning fast execution with zero loading screens.</span>
+                            </div>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Examples</h2>
+                        <div className="space-y-4">
+
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Common Password:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Searching password123 will show it has been leaked over 10 million times.</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Can I check if my Email is pwned?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Currently, our tool only checks passwords for maximum anonymity and zero tracking. Checking emails requires sending the actual email address over the network, which we avoid doing directly to maintain your ultimate privacy.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Safe Password:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Searching a generated string like Tx9!kLp$2 will show 0 leaks.</p>
                         </div>
-                    </div>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Historical Check:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Validating an old password you used to use years ago to see if it was ever exposed.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-4">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is this tool free?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, absolutely free to use.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is my data safe?</h4>
+                            <p className="text-slate-600 leading-relaxed">Incredibly safe. We use the 'k-Anonymity' model. We convert your password to a SHA-1 hash locally, and only send the first 5 characters of the hash to the API. Your actual password never touches a network.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Does it work on mobile?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, fully functional on mobile devices.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">If my password has 0 breaches, is it safe?</h4>
+                            <p className="text-slate-600 leading-relaxed">Being in 0 breaches is great, but it must also be unguessable. 'MyNameIsJohn' might have 0 breaches but is easy to guess. Combine this with our Password Generator.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Are you saving the passwords I type?</h4>
+                            <p className="text-slate-600 leading-relaxed">Absolutely not. The input is processed, hashed, and discarded instantly.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Related Tools</h2>
+                        <div className="grid sm:grid-cols-3 gap-4">
+
+                        <a href="/tools/email-breach-checker" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Email Breach Checker &rarr;</span>
+                        </a>
+                        <a href="/tools/password-generator" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Strong Password Generator &rarr;</span>
+                        </a>
+                        <a href="/tools/uuid-generator" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">UUID Generator &rarr;</span>
+                        </a>
+                        </div>
+                    </section>
                 </article>
+            
             </div>
         </div>
     );

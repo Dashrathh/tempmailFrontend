@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "Strong Password Generator – Free & Secure | TempMail.sbs",
+    title: "Strong Password Generator – Free & Secure",
     description: "Generate random, secure passwords instantly. No signup required. Free password generator tool by TempMail.sbs.",
     keywords: ["password generator", "random password generator", "strong password generator", "secure password creator", "free password generator"],
     alternates: {

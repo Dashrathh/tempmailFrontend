@@ -5,7 +5,7 @@ export const metadata = {
     description:
         "Learn about TempMail.sbs — your go-to solution for fast, secure, and anonymous temporary email addresses.",
     openGraph: {
-        title: "About Us - TempMail.sbs",
+        title: "About Us",
         description:
             "Learn about TempMail.sbs — your go-to solution for fast, secure, and anonymous temporary email addresses.",
     },

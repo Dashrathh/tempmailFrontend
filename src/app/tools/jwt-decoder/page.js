@@ -86,12 +86,10 @@ export default function JwtDecoder() {
                     <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-4 text-center">
                         JWT Decoder
                     </h1>
-                    <p className="text-slate-600 mb-8 text-center max-w-xl">
-                        Decode, parse, and inspect your JSON Web Tokens (JWT) instantly. <br />
+                    <p className="text-slate-600 mb-8 text-center max-w-xl">Decode, parse, and inspect your JSON Web Tokens (JWT) instantly. <br />
                         <span className="inline-flex items-center gap-1 font-semibold text-emerald-600 mt-2 bg-emerald-50 px-3 py-1 rounded-full text-sm">
                             <ShieldCheck className="w-4 h-4" /> 100% Secure Client-Side Parsing
-                        </span>
-                    </p>
+                        </span> Free, no signup required.</p>
 
                     <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
 
@@ -190,62 +188,178 @@ export default function JwtDecoder() {
                     </div>
                 </div>
 
+                
                 {/* SEO & EDUCATIONAL SECTION */}
-                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-4">What is a JSON Web Token (JWT)?</h2>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                        JSON Web Token (JWT) is an open industry standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA.
-                    </p>
-
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                        They are most commonly used for <strong className="text-slate-800">Authorization</strong> and information exchange in modern web and mobile applications (specifically in Single Page Applications - SPAs).
-                    </p>
-
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">The 3 Parts of a JWT</h3>
-                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 mt-4 mb-8">
-                        <p className="text-sm text-slate-600 mb-4">A JWT string looks like an encrypted, long string of characters separated by dots (<code>.</code>). The structure is: <code>header.payload.signature</code></p>
-
-                        <dl className="space-y-4 text-sm">
-                            <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                                <dt className="font-bold text-rose-600 mb-1">1. Header</dt>
-                                <dd className="text-slate-600 leading-relaxed">The header typically consists of two parts: the type of the token (which is JWT), and the signing algorithm being used (such as HMAC SHA256 or RSA). It is then Base64Url encoded to form the first part of the token string.</dd>
-                            </div>
-                            <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                                <dt className="font-bold text-purple-600 mb-1">2. Payload</dt>
-                                <dd className="text-slate-600 leading-relaxed">The payload contains the "claims". Claims are statements about an entity (typically, the user) and additional data (like user ID, email, role, or token expiration time). This is also Base64Url encoded.</dd>
-                            </div>
-                            <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                                <dt className="font-bold text-blue-600 mb-1">3. Signature</dt>
-                                <dd className="text-slate-600 leading-relaxed">To create the signature part you have to take the encoded header, the encoded payload, a secret code (known only to the server), the algorithm specified in the header, and sign that. The signature is used to verify the message wasn't changed along the way.</dd>
-                            </div>
-                        </dl>
-                    </div>
-
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Frequently Asked Questions</h3>
-                    <div className="space-y-6">
-                        <div>
-                            <h4 className="font-semibold text-slate-800 flex items-center gap-2">Is it safe to paste my JWT online to decode?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Yes, <strong className="text-emerald-600">if the tool is 100% Client-Side</strong> like ours. Our JWT Decoder parses the token entirely within your web browser using JavaScript. The token is never sent over the network to any backend server. Your sensitive tokens remain strictly on your local device.
-                            </p>
+                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto mt-12 w-full">
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">What is a JWT Decoder?</h2>
+                        <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                            <p>The JWT Decoder is an advanced security tool that unpacks JSON Web Tokens. It separates and decodes the Header and Payload of the token, allowing developers to inspect claims, user IDs, and expiration dates in a human-readable JSON format.</p>
+                            <p>JSON Web Tokens (JWT) are heavily used in modern web authentication. They look like gibberish strings of random characters separated by dots. When debugging login systems, developers need to verify exactly what data is inside the token. This tool safely decodes the token instantly without needing the secret key.</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Is decoding a JWT the same as decrypting it?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                No! This is a very common misconception. The Header and Payload of a standard JWT are <em>Base64Url encoded</em>, not encrypted. This means anyone who gets hold of a JWT string can easily read the Payload data (like user email, ID) just by decoding it.
-                            </p>
-                            <div className="mt-3 bg-red-50 border-l-4 border-red-500 p-3 text-sm text-red-800 font-medium">
-                                <strong>Security Rule:</strong> Never put secret, sensitive data (like passwords or credit card numbers) inside a JWT payload unless the token is explicitly encrypted (JWE).
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">How to Use JWT Decoder</h2>
+                        <ul className="space-y-4">
+
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                1
                             </div>
+                            <p className="text-slate-600 mt-1">Paste your full JSON Web Token string into the top input field.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                2
+                            </div>
+                            <p className="text-slate-600 mt-1">The tool will instantly parse the token and split it into Header, Payload, and Signature.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                3
+                            </div>
+                            <p className="text-slate-600 mt-1">Review the Header to see the algorithm used (e.g., HS256).</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                4
+                            </div>
+                            <p className="text-slate-600 mt-1">Review the Payload to inspect claims like `sub`, `iat`, and `exp`.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                5
+                            </div>
+                            <p className="text-slate-600 mt-1">The tool automatically converts Unix timestamps into human-readable browser dates.</p>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Features</h2>
+                        <ul className="grid md:grid-cols-2 gap-6">
+
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">100% Free:</strong>
+                                <span className="text-slate-600"> Unlimited use without any hidden fees or premium locks.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Signup:</strong>
+                                <span className="text-slate-600"> Instantly start using the utility without registering an account.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Works in Browser:</strong>
+                                <span className="text-slate-600"> Fully client-side processing natively in your web browser.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Data Stored:</strong>
+                                <span className="text-slate-600"> Your inputs are not saved, logged, or recorded on any server.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Mobile Friendly:</strong>
+                                <span className="text-slate-600"> Perfect responsive design for smartphones and tablets.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Instant Results:</strong>
+                                <span className="text-slate-600"> Lightning fast execution with zero loading screens.</span>
+                            </div>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Examples</h2>
+                        <div className="space-y-4">
+
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Raw JWT:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> eyJhbG.eyJzdWI.SflKxw (A standard three-part token)</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Can this tool "Verify" the signature of the token?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Our tool strictly focuses on <em>Decoding</em> the visible payload and header for inspection purposes. We do not verify the signature because doing so requires the server's private <code>secret_key</code>, which you should never paste into any online tool for security reasons.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Decoded Header:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> {"alg": "HS256", "typ": "JWT"}</p>
                         </div>
-                    </div>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Decoded Payload:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> {"userId": 123, "role": "admin", "exp": 173110290}</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-4">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is this tool free?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, it is entirely free for unlimited decoding.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is my data safe?</h4>
+                            <p className="text-slate-600 leading-relaxed">Extremely safe. JWTs contain authentication secrets. Our tool decodes them entirely client-side in your browser.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Does it work on mobile?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, fully responsive on all mobile devices.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Can this tool verify the signature?</h4>
+                            <p className="text-slate-600 leading-relaxed">No, this tool only decodes the Base64Url encoded segments. Verifying the cryptographic signature requires your private backend secret key, which should never be pasted online.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Why do I see a timestamp number?</h4>
+                            <p className="text-slate-600 leading-relaxed">JWT uses Unix Epoch time (seconds since 1970). Our interface automatically formats this into a standard date and time for you.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Related Tools</h2>
+                        <div className="grid sm:grid-cols-3 gap-4">
+
+                        <a href="/tools/json-formatter" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">JSON Formatter &rarr;</span>
+                        </a>
+                        <a href="/tools/base64-encoder-decoder" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Base64 Encoder & Decoder &rarr;</span>
+                        </a>
+                        <a href="/tools/url-encoder-decoder" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">URL Encoder & Decoder &rarr;</span>
+                        </a>
+                        </div>
+                    </section>
                 </article>
+            
             </div>
         </div>
     );

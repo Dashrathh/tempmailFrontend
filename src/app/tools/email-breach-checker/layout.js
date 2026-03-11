@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "Email Breach Checker – Was Your Email Leaked? | TempMail.sbs",
+    title: "Email Breach Checker – Was Your Email Leaked?",
     description: "Check if your email was exposed in a data breach. Powered by HIBP API. Free and instant.",
     keywords: ["email breach checker", "has my email been pwned", "email leak check", "data breach email", "check email pwned"],
     alternates: {

@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "JWT Decoder – Decode JSON Web Tokens Online | TempMail.sbs",
+    title: "JWT Decoder – Decode JSON Web Tokens Online",
     description: "Decode and inspect JWT tokens instantly. 100% secure client-side decoding tool.",
     keywords: ["jwt decoder", "jwt parser", "decode jwt", "json web token", "jwt online", "parse jwt token", "developer tools"],
     alternates: {

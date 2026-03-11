@@ -99,9 +99,7 @@ export default function PasswordGenerator() {
                     <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-4 text-center">
                         Random Password Generator
                     </h1>
-                    <p className="text-slate-600 mb-8 text-center max-w-xl">
-                        Instantly create highly secure, random passwords. Works entirely in your browser—no data is sent to any server.
-                    </p>
+                    <p className="text-slate-600 mb-8 text-center max-w-xl">Instantly create highly secure, random passwords. Works entirely in your browser—no data is sent to any server. Free, no signup required.</p>
 
                     <div className="w-full max-w-2xl bg-white rounded-3xl border border-slate-200 shadow-xl p-6 md:p-10">
                         {/* Password Display */}
@@ -217,45 +215,178 @@ export default function PasswordGenerator() {
                     </div>
                 </div>
 
+                
                 {/* SEO & EDUCATIONAL SECTION */}
-                <article className="max-w-3xl border-t border-slate-200 pt-16 mx-auto">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-4">What makes a password truly secure?</h2>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                        In today's digital landscape, using a strong, unique password for every online account is no longer optional—it's essential. Hackers use powerful software capable of guessing billions of passwords per second through a method known as "brute force."
-                        A secure password created by our <strong>Random Password Generator</strong> acts as your first line of defense against these cyber threats.
-                    </p>
+                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto mt-12 w-full">
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">What is a Strong Password Generator?</h2>
+                        <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                            <p>A Strong Password Generator is a free online tool designed to create highly secure, unpredictable passwords that are incredibly difficult for humans or computers to crack. Using random client-side cryptographically secure algorithms, it mixes uppercase letters, lowercase letters, numbers, and special symbols to ensure maximum entropy.</p>
+                            <p>In today's digital landscape, using the same simple password across multiple accounts leaves you vulnerable to data breaches and brute-force attacks. This tool instantly solves that problem by generating unique, randomized passwords for banking apps, social media, and sensitive accounts directly in your browser without saving any data.</p>
+                        </div>
+                    </section>
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Best Practices for Password Security in 2026</h3>
-                    <ul className="space-y-3 mb-8 text-slate-600 list-disc pl-5">
-                        <li><strong className="text-slate-800">Length is crucial:</strong> Every character you add exponentially increases the time it takes to crack. Aim for at least 16 characters.</li>
-                        <li><strong className="text-slate-800">Mix your characters:</strong> Use a random combination of uppercase letters, lowercase letters, numbers, and symbols.</li>
-                        <li><strong className="text-slate-800">Never reuse passwords:</strong> If one website suffers a data breach, hackers will try your compromised password on other popular sites (credential stuffing).</li>
-                        <li><strong className="text-slate-800">Avoid personal information:</strong> Do not include pet names, birthdays, or dictionary words.</li>
-                        <li><strong className="text-slate-800">Use a Password Manager:</strong> Since it's impossible to memorize 50+ random 16-character passwords, use a reputable password manager to store them securely.</li>
-                    </ul>
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">How to Use Strong Password Generator</h2>
+                        <ul className="space-y-4">
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Frequently Asked Questions</h3>
-                    <div className="space-y-6">
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Is this password generator safe to use?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Yes. The password generation process happens entirely in your web browser (client-side) using the secure <code>window.crypto</code> API. We do not store, track, or transmit the passwords you generate to any server.
-                            </p>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                1
+                            </div>
+                            <p className="text-slate-600 mt-1">Select your desired password length using the slider (we recommend a minimum of 16 characters).</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                2
+                            </div>
+                            <p className="text-slate-600 mt-1">Choose which character types to include: Uppercase, Lowercase, Numbers, and Symbols.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                3
+                            </div>
+                            <p className="text-slate-600 mt-1">Optionally, type a custom word you want to appear in the random password.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                4
+                            </div>
+                            <p className="text-slate-600 mt-1">Click the 'Generate New' button if you are not satisfied with the current result.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                5
+                            </div>
+                            <p className="text-slate-600 mt-1">Click the 'Copy' button to save the password to your clipboard.</p>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Features</h2>
+                        <ul className="grid md:grid-cols-2 gap-6">
+
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">100% Free:</strong>
+                                <span className="text-slate-600"> Unlimited use without any hidden fees or premium locks.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Signup:</strong>
+                                <span className="text-slate-600"> Instantly start using the utility without registering an account.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Works in Browser:</strong>
+                                <span className="text-slate-600"> Fully client-side processing natively in your web browser.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Data Stored:</strong>
+                                <span className="text-slate-600"> Your inputs are not saved, logged, or recorded on any server.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Mobile Friendly:</strong>
+                                <span className="text-slate-600"> Perfect responsive design for smartphones and tablets.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Instant Results:</strong>
+                                <span className="text-slate-600"> Lightning fast execution with zero loading screens.</span>
+                            </div>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Examples</h2>
+                        <div className="space-y-4">
+
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Weak Password:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> password123 (Can be hacked in less than a second)</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">How long does it take a hacker to crack a 16-character password?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                A 16-character password containing a mix of letters, numbers, and symbols generated by our tool would take standard computing hardware trillions of years to crack using brute force.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Medium Password:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> MyDogMax2022! (Contains personal info, hackers use dictionary attacks)</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Should I change my passwords regularly?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Modern security guidelines suggest that if you use a strong, unique password and have Multi-Factor Authentication (MFA) enabled, you only need to change your password if you suspect a specific breach or account compromise.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Strong Password:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> p#9$Ks2@vLq5*Zx1 (16 characters, completely random, would take trillions of years to crack)</p>
                         </div>
-                    </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-4">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is this tool free?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, our tool is 100% free forever. There are no usage limits.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is my data safe?</h4>
+                            <p className="text-slate-600 leading-relaxed">Absolutely. Everything runs locally in your web browser. Your passwords never touch our servers.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Does it work on mobile?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, it is perfectly optimized for all smartphones and tablets.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">How long should my password be?</h4>
+                            <p className="text-slate-600 leading-relaxed">Security experts recommend a minimum of 16 characters for critical accounts.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Should I memorize these passwords?</h4>
+                            <p className="text-slate-600 leading-relaxed">No. It is impossible to remember unique 16-character passwords for every site. We strongly recommend using a reputable Password Manager to store them.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Related Tools</h2>
+                        <div className="grid sm:grid-cols-3 gap-4">
+
+                        <a href="/tools/password-breach-checker" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Password Breach Checker &rarr;</span>
+                        </a>
+                        <a href="/tools/email-breach-checker" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Email Breach Checker &rarr;</span>
+                        </a>
+                        <a href="/tools/uuid-generator" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">UUID Generator &rarr;</span>
+                        </a>
+                        </div>
+                    </section>
                 </article>
+            
             </div>
         </div>
     );

@@ -67,7 +67,7 @@ export default function PopularTools() {
                 </div>
                 <div className="text-center mt-8">
                     <Link href="/tools" className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors">
-                        View All {'>'}  13 Free Tools →
+                        View All {'>'}  14 Free Tools →
                     </Link>
                 </div>
             </div>

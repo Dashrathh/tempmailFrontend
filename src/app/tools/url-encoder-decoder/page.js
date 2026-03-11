@@ -65,9 +65,7 @@ export default function UrlEncoderDecoder() {
                     <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-4 text-center">
                         URL Encoder & Decoder
                     </h1>
-                    <p className="text-slate-600 mb-8 text-center max-w-xl">
-                        Instantly format URLs by encoding special characters or decode them back to readable text. Runs 100% locally in your browser.
-                    </p>
+                    <p className="text-slate-600 mb-8 text-center max-w-xl">Instantly format URLs by encoding special characters or decode them back to readable text. Runs 100% locally in your browser. Free, no signup required.</p>
 
                     <div className="w-full bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden p-6 md:p-8">
 
@@ -166,77 +164,178 @@ export default function UrlEncoderDecoder() {
                     </div>
                 </div>
 
+                
                 {/* SEO & EDUCATIONAL SECTION */}
-                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-4">What is URL Encoding (Percent-Encoding)?</h2>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                        URL encoding is a mechanism for translating characters that have special meaning in a URL into a universally accepted and safe format.
-                        Web addresses (URLs) can only be sent over the Internet using the US-ASCII character set. If a URL contains characters outside the ASCII set (like spaces, emojis, or foreign symbols), or characters that act as structural delimiters (like <code>?</code>, <code>&</code>, or <code>=</code>), they must be converted.
-                    </p>
-
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Common Encoded Characters</h3>
-                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 mt-4 mb-8 overflow-x-auto">
-                        <table className="w-full text-left text-sm text-slate-600">
-                            <thead className="bg-slate-100/50 text-slate-700">
-                                <tr>
-                                    <th className="px-4 py-3 font-bold rounded-tl-lg">Character</th>
-                                    <th className="px-4 py-3 font-bold">Meaning in URL</th>
-                                    <th className="px-4 py-3 font-bold rounded-tr-lg">Encoded Value</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-200">
-                                <tr>
-                                    <td className="px-4 py-3 font-mono text-lg bg-white"> (space)</td>
-                                    <td className="px-4 py-3 bg-white">Used to separate words</td>
-                                    <td className="px-4 py-3 font-mono font-bold text-blue-600 bg-white">%20</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-4 py-3 font-mono text-lg">!</td>
-                                    <td className="px-4 py-3">Exclamation point</td>
-                                    <td className="px-4 py-3 font-mono font-bold text-blue-600">%21</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-4 py-3 font-mono text-lg bg-white">#</td>
-                                    <td className="px-4 py-3 bg-white">Indicates a fragment / anchor</td>
-                                    <td className="px-4 py-3 font-mono font-bold text-blue-600 bg-white">%23</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-4 py-3 font-mono text-lg">&amp;</td>
-                                    <td className="px-4 py-3">Separates query parameters</td>
-                                    <td className="px-4 py-3 font-mono font-bold text-blue-600">%26</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-4 py-3 font-mono text-lg bg-white">?</td>
-                                    <td className="px-4 py-3 bg-white">Separates URL path from query parameters</td>
-                                    <td className="px-4 py-3 font-mono font-bold text-blue-600 bg-white">%3F</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Why use a URL Decoder?</h3>
-                    <ul className="space-y-3 mb-8 text-slate-600 list-disc pl-5">
-                        <li><strong className="text-slate-800">Reading UTM Tags:</strong> Marketers often deal with massive messy links filled with tracking tags. Decoding makes the <code>utm_source</code> and <code>utm_campaign</code> parameters human-readable again.</li>
-                        <li><strong className="text-slate-800">Debugging APIs:</strong> Developers analyzing network requests need to look at the raw data being sent to GET endpoints.</li>
-                        <li><strong className="text-slate-800">Security Analysis:</strong> Security researchers decode payloads to see if attackers are trying to hide Cross-Site Scripting (XSS) or SQL Injection attacks behind percent-encoded strings.</li>
-                    </ul>
-
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Frequently Asked Questions</h3>
-                    <div className="space-y-6">
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Does this tool use encodeURI or encodeURIComponent?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Our tool strictly uses <code>encodeURIComponent</code> (and its decoding equivalent) behind the scenes. This is the safest, most comprehensive method because it encodes <em>all</em> special characters, ensuring your query strings are entirely valid and won't break web servers.
-                            </p>
+                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto mt-12 w-full">
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">What is a URL Encoder & Decoder?</h2>
+                        <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                            <p>The URL Encoder & Decoder is a developer utility that converts special characters in a string into format suitable for transmitting over the internet, and vice versa. It safely escapes unsafe ASCII characters using percent-encoding.</p>
+                            <p>URLs can only be sent over the Internet using the ASCII character-set. If a URL contains spaces or special characters like `?`, `&`, or `=`, it can break the web request or cause server errors. This tool instantly formats your strings to ensure safe data transmission in web queries and APIs.</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Is my data sent to any server?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                No. The encoding and decoding processes happen instantly using your browser's native JavaScript engine. Your links and text are completely private.
-                            </p>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">How to Use URL Encoder & Decoder</h2>
+                        <ul className="space-y-4">
+
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                1
+                            </div>
+                            <p className="text-slate-600 mt-1">Select your operation: 'Encode' or 'Decode' using the toggle buttons.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                2
+                            </div>
+                            <p className="text-slate-600 mt-1">Paste or type your URL or text string into the input box.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                3
+                            </div>
+                            <p className="text-slate-600 mt-1">The tool will instantly process the string in real-time.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                4
+                            </div>
+                            <p className="text-slate-600 mt-1">View the result in the output box.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                5
+                            </div>
+                            <p className="text-slate-600 mt-1">Click the 'Copy' button to copy the formatted string to your clipboard.</p>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Features</h2>
+                        <ul className="grid md:grid-cols-2 gap-6">
+
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">100% Free:</strong>
+                                <span className="text-slate-600"> Unlimited use without any hidden fees or premium locks.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Signup:</strong>
+                                <span className="text-slate-600"> Instantly start using the utility without registering an account.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Works in Browser:</strong>
+                                <span className="text-slate-600"> Fully client-side processing natively in your web browser.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Data Stored:</strong>
+                                <span className="text-slate-600"> Your inputs are not saved, logged, or recorded on any server.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Mobile Friendly:</strong>
+                                <span className="text-slate-600"> Perfect responsive design for smartphones and tablets.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Instant Results:</strong>
+                                <span className="text-slate-600"> Lightning fast execution with zero loading screens.</span>
+                            </div>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Examples</h2>
+                        <div className="space-y-4">
+
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Encoding a Space:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Hello World becomes Hello%20World</p>
                         </div>
-                    </div>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Encoding Query Params:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> https://example.com/?q=hello&test becomes https%3A%2F%2Fexample.com%2F%3Fq%3Dhello%26test</p>
+                        </div>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Decoding:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Email%20Address becomes Email Address</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-4">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is this tool free?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, it is 100% free.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is my data safe?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes. The encoding and decoding happens purely in JavaScript on your device.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Does it work on mobile?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, the interface is optimized for mobile screens.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">What does encodeURI vs encodeURIComponent mean?</h4>
+                            <p className="text-slate-600 leading-relaxed">Our encoder uses `encodeURIComponent` to properly encode characters like `&` and `=` which are strictly necessary for secure HTML form and API data transmission.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Why is a space converted to %20?</h4>
+                            <p className="text-slate-600 leading-relaxed">%20 is the hexadecimal representation of a space character in the ASCII standard.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Related Tools</h2>
+                        <div className="grid sm:grid-cols-3 gap-4">
+
+                        <a href="/tools/base64-encoder-decoder" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Base64 Encoder & Decoder &rarr;</span>
+                        </a>
+                        <a href="/tools/ip-lookup" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">IP Lookup &rarr;</span>
+                        </a>
+                        <a href="/tools/json-formatter" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">JSON Formatter &rarr;</span>
+                        </a>
+                        </div>
+                    </section>
                 </article>
+            
             </div>
         </div>
     );

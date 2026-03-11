@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "Word & Character Counter – Free Online Tool | TempMail.sbs",
+    title: "Word & Character Counter – Free Online Tool",
     description: "Count words, characters, sentences and keyword density instantly. Free word counter tool.",
     keywords: ["word counter", "character counter", "text analyzer", "keyword density", "reading time calculator", "letter count", "word count online"],
     alternates: {

@@ -1,17 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const BlogCard = ({ blog }) => {
     return (
         <div className="flex flex-col h-full p-4 rounded-lg shadow-md hover:shadow-lg transition-all bg-white overflow-hidden">
             <div className="relative pb-[56.25%] mb-4 rounded-lg overflow-hidden">
                 {blog.image ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
+                    <Image
                         src={blog.image}
                         alt={blog.title || "Blog image"}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                 ) : (
                     <div className="absolute inset-0 bg-gray-200 border-2 border-dashed rounded-xl flex items-center justify-center">

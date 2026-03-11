@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "Pwned Password Checker – Was Your Password Exposed? | TempMail.sbs",
+    title: "Pwned Password Checker – Was Your Password Exposed?",
     description: "Find out if your password was leaked in a data breach. Uses secure k-anonymity API.",
     keywords: ["password breach checker", "have i been pwned", "pwned password check", "data breach scanner", "password leak check", "privacy tools", "secure password check"],
     alternates: {

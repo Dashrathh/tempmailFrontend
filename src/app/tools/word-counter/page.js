@@ -121,9 +121,7 @@ export default function WordCounter() {
                     <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-4 text-center">
                         Word & Character Counter
                     </h1>
-                    <p className="text-slate-600 mb-8 text-center max-w-xl">
-                        Instantly analyze your text. Count words, characters, sentences, check keyword density, and estimate reading time. 100% private.
-                    </p>
+                    <p className="text-slate-600 mb-8 text-center max-w-xl">Instantly analyze your text. Count words, characters, sentences, check keyword density, and estimate reading time. 100% private. Free, no signup required.</p>
 
                     <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
 
@@ -271,51 +269,178 @@ export default function WordCounter() {
                     </div>
                 </div>
 
+                
                 {/* SEO & EDUCATIONAL SECTION */}
-                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-4">Why use an Online Word Counter?</h2>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                        Whether you are a student writing an essay, a marketer drafting a social media post, or an SEO specialist optimizing a webpage, knowing your exact text metrics is critical. An online word and character counter provides instant feedback without needing to open heavy desktop applications like Microsoft Word. Plus, you get advanced insights like keyword density, reading time, and social media constraints in real-time.
-                    </p>
+                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto mt-12 w-full">
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">What is a Word & Character Counter?</h2>
+                        <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                            <p>The Word Counter is an advanced, real-time text analysis tool that counts words, characters, sentences, and paragraphs instantly as you type. It also calculates estimated reading time and speaking time, making it an indispensable utility for writers, students, and professionals.</p>
+                            <p>Most social media platforms (like Twitter), academic essays, and SEO meta descriptions have strict character or word limits. Counting manually is impossible. This tool provides instant metrics without needing to open a heavy word processor, helping you optimize your content perfectly.</p>
+                        </div>
+                    </section>
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Crucial Character Limits for 2024</h3>
-                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 mt-4 mb-8">
-                        <ul className="space-y-4 list-disc pl-5 text-sm text-slate-700 font-medium">
-                            <li><strong className="text-blue-600">Twitter (X):</strong> 280 characters per standard tweet.</li>
-                            <li><strong className="text-rose-600">Instagram:</strong> 2,200 characters for a caption, but only the first 125 characters are visible in the feed before the "See more" button.</li>
-                            <li><strong className="text-amber-600">SEO Meta Title:</strong> Ideally keep it under 60 characters so it doesn't get cut off on Google Search results.</li>
-                            <li><strong className="text-amber-600">SEO Meta Description:</strong> Best practice is around 155-160 characters to maximize visibility and click-through rates.</li>
-                            <li><strong className="text-green-600">SMS Text Message:</strong> 160 characters per single standard SMS segment.</li>
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">How to Use Word & Character Counter</h2>
+                        <ul className="space-y-4">
+
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                1
+                            </div>
+                            <p className="text-slate-600 mt-1">Click inside the large text area.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                2
+                            </div>
+                            <p className="text-slate-600 mt-1">Start typing your text, or paste your existing content from your clipboard.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                3
+                            </div>
+                            <p className="text-slate-600 mt-1">Watch the top metrics update in real-time as you type, tracking words, characters, and sentences.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                4
+                            </div>
+                            <p className="text-slate-600 mt-1">Check the bottom panel to see the estimated reading time and speaking time.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                5
+                            </div>
+                            <p className="text-slate-600 mt-1">Use the 'Clear' button to reset the board when you're finished.</p>
+                        </li>
                         </ul>
-                    </div>
+                    </section>
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">What is Keyword Density?</h3>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                        Keyword density refers to the percentage of times a specific word or phrase appears on a webpage compared to the total number of words on that page. In the context of Search Engine Optimization (SEO), maintaining an optimal keyword density (usually around 1% to 2%) helps search engines like Google understand what your content is about without triggering "keyword stuffing" penalties. Our built-in analyzer automatically filters out common stop words (like "the", "and", "is") to give you actionable organic density data.
-                    </p>
+                    <section className="mb-12 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Features</h2>
+                        <ul className="grid md:grid-cols-2 gap-6">
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Frequently Asked Questions</h3>
-                    <div className="space-y-6">
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Does this tool save my text or essays?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                No, absolutely not. We value your privacy. This text analyzer runs 100% locally in your web browser. Whatever you type or paste NEVER leaves your device or gets sent to our servers.
-                            </p>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">100% Free:</strong>
+                                <span className="text-slate-600"> Unlimited use without any hidden fees or premium locks.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Signup:</strong>
+                                <span className="text-slate-600"> Instantly start using the utility without registering an account.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Works in Browser:</strong>
+                                <span className="text-slate-600"> Fully client-side processing natively in your web browser.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Data Stored:</strong>
+                                <span className="text-slate-600"> Your inputs are not saved, logged, or recorded on any server.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Mobile Friendly:</strong>
+                                <span className="text-slate-600"> Perfect responsive design for smartphones and tablets.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Instant Results:</strong>
+                                <span className="text-slate-600"> Lightning fast execution with zero loading screens.</span>
+                            </div>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Examples</h2>
+                        <div className="space-y-4">
+
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Social Media Limits:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Check if your tweet fits inside the 280-character limit.</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">What is the difference between word count and character count?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                A <strong>word count</strong> totals the number of individual words separated by spaces. A <strong>character count</strong> totals every single letter, number, punctuation mark, and even the spaces between them. Some platforms strictly limit character counts, while assignments usually dictate word counts.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">SEO Optimization:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Ensure your meta description is right around 150-160 characters.</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">How is Reading Time calculated?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                We calculate Estimated Reading Time based on the average human reading speed of approximately 238 words per minute. Estimated Speaking Time (useful for presentations and podcasts) is calculated at the slower pace of 130 words per minute.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Essay Assignments:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Verify that your academic paper meets the strict 500-word minimum requirement.</p>
                         </div>
-                    </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-4">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is this tool free?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, the word counter is completely free.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is my data safe?</h4>
+                            <p className="text-slate-600 leading-relaxed">100% safe. The text analysis happens entirely client-side in your browser. Nothing is sent to our servers.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Does it work on mobile?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, you can easily paste text from mobile apps.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Does the character count include spaces?</h4>
+                            <p className="text-slate-600 leading-relaxed">The tool shows total characters, and typically most limits (like Twitter) count spaces as characters too.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">How is reading time calculated?</h4>
+                            <p className="text-slate-600 leading-relaxed">Reading time is estimated based on the average adult reading speed of about 200 words per minute.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Related Tools</h2>
+                        <div className="grid sm:grid-cols-3 gap-4">
+
+                        <a href="/tools/lorem-ipsum-generator" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Lorem Ipsum Generator &rarr;</span>
+                        </a>
+                        <a href="/tools/base64-encoder-decoder" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Base64 Encoder & Decoder &rarr;</span>
+                        </a>
+                        <a href="/tools/random-word-generator" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Random Word Generator &rarr;</span>
+                        </a>
+                        </div>
+                    </section>
                 </article>
+            
             </div>
         </div>
     );

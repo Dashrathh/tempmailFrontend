@@ -21,7 +21,7 @@ export const metadata = {
     },
     openGraph: {
         type: "website",
-        title: "Send Anonymous Email Free - No Signup | TempMail.sbs",
+        title: "Send Anonymous Email Free - No Signup",
         description:
             "Send emails anonymously with a disposable address. No registration needed. 100% free, private & secure.",
         url: "https://www.tempmail.sbs/sendmail",
@@ -29,7 +29,7 @@ export const metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Send Anonymous Email Free | TempMail.sbs",
+        title: "Send Anonymous Email Free",
         description:
             "Send emails anonymously with a disposable address. No registration needed. 100% free & private.",
         images: ["https://www.tempmail.sbs/og-image.png"],

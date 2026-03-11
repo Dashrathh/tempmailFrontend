@@ -73,9 +73,7 @@ export default function UUIDGenerator() {
                     <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-4 text-center">
                         UUID / GUID Generator
                     </h1>
-                    <p className="text-slate-600 mb-8 text-center max-w-xl">
-                        Generate universally unique identifiers (UUIDs) instantly. Create 1 to 500 random UUIDs in bulk. 100% free and client-side processing.
-                    </p>
+                    <p className="text-slate-600 mb-8 text-center max-w-xl">Generate universally unique identifiers (UUIDs) instantly. Create 1 to 500 random UUIDs in bulk. 100% free and client-side processing. Free, no signup required.</p>
 
                     <div className="w-full bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden flex flex-col lg:flex-row">
 
@@ -203,65 +201,178 @@ export default function UUIDGenerator() {
                     </div>
                 </div>
 
+                
                 {/* SEO & EDUCATIONAL SECTION */}
-                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-4">What is a UUID or GUID?</h2>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                        A <strong>UUID (Universally Unique Identifier)</strong> is a 128-bit number used to uniquely identify information in computer systems. Created by the Open Software Foundation, UUIDs guarantee uniqueness across space and time without requiring a central authority to assign them.
-                        In the Microsoft ecosystem, these are interchangeably referred to as <strong>GUIDs (Globally Unique Identifiers)</strong>.
-                    </p>
+                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto mt-12 w-full">
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">What is a UUID / GUID Generator?</h2>
+                        <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                            <p>The UUID (Universally Unique Identifier) Generator creates highly secure, statistically unique 128-bit identifiers. It supports generating both Version 4 (Random) and Version 1 (Time-based) UUIDs in bulk, which are heavily used in databases and software engineering.</p>
+                            <p>When building databases, APIs, or distributed systems, relying on simple incremental integers (1, 2, 3...) for IDs can lead to security flaws and data collision issues. UUIDs solve this by providing a globally unique string that ensures database records never clash, even across different servers.</p>
+                        </div>
+                    </section>
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Common Use Cases for UUIDs</h3>
-                    <ul className="space-y-3 mb-8 text-slate-600 list-disc pl-5">
-                        <li><strong className="text-slate-800">Database Keys:</strong> Used as Primary Keys in distributed databases where auto-incrementing integers fail to scale natively.</li>
-                        <li><strong className="text-slate-800">Session IDs:</strong> Used in web applications to uniquely identify user browser sessions securely.</li>
-                        <li><strong className="text-slate-800">Transaction IDs:</strong> Used in e-commerce and banking apps to trace payment operations across multiple microservices.</li>
-                        <li><strong className="text-slate-800">File Names:</strong> Appended to uploaded images or documents to prevent accidental file overwrites on storage servers.</li>
-                    </ul>
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">How to Use UUID / GUID Generator</h2>
+                        <ul className="space-y-4">
 
-                    <div className="grid md:grid-cols-2 gap-8 mt-12 mb-8 bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                        <div>
-                            <h4 className="flex items-center gap-2 font-bold text-slate-800 mb-3 text-lg">
-                                <span className="bg-blue-100 text-blue-700 w-8 h-8 rounded-full flex items-center justify-center text-sm font-extrabold">v4</span>
-                                Random (UUIDv4)
-                            </h4>
-                            <p className="text-sm text-slate-600 leading-relaxed">
-                                UUID version 4 is generated entirely from cryptographically secure random numbers. This is the industry standard for 99% of applications because it guarantees no predictable pattern. The chance of generating a duplicate UUIDv4 is effectively zero.
-                            </p>
-                        </div>
-                        <div>
-                            <h4 className="flex items-center gap-2 font-bold text-slate-800 mb-3 text-lg">
-                                <span className="bg-purple-100 text-purple-700 w-8 h-8 rounded-full flex items-center justify-center text-sm font-extrabold">v1</span>
-                                Time-Based (UUIDv1)
-                            </h4>
-                            <p className="text-sm text-slate-600 leading-relaxed">
-                                UUID version 1 combines the current date-time and the MAC address of the computer generating it. It is primarily used when data needs to be sorted chronologically by ID, though it is less secure as it leaks the time of generation and the machine's identity.
-                            </p>
-                        </div>
-                    </div>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                1
+                            </div>
+                            <p className="text-slate-600 mt-1">Select the UUID Version you need (v4 for random, v1 for timestamp-based).</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                2
+                            </div>
+                            <p className="text-slate-600 mt-1">Enter the number of UUIDs you want to generate in bulk (up to 500 at once).</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                3
+                            </div>
+                            <p className="text-slate-600 mt-1">Click the 'Generate' button to instantly create the list.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                4
+                            </div>
+                            <p className="text-slate-600 mt-1">Click the 'Copy All' button to copy the entire list line-by-line.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                5
+                            </div>
+                            <p className="text-slate-600 mt-1">Alternatively, copy individual UUIDs directly.</p>
+                        </li>
+                        </ul>
+                    </section>
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Frequently Asked Questions</h3>
-                    <div className="space-y-6">
-                        <div>
-                            <h4 className="font-semibold text-slate-800">What is the difference between UUID and GUID?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                There is virtually no difference. "UUID" is the standard term used across Linux, Java, Python, and open-source stacks. "GUID" is the specific term popularized by Microsoft in the Windows/C# ecosystem. The numerical values and formats are identical.
-                            </p>
+                    <section className="mb-12 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Features</h2>
+                        <ul className="grid md:grid-cols-2 gap-6">
+
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">100% Free:</strong>
+                                <span className="text-slate-600"> Unlimited use without any hidden fees or premium locks.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Signup:</strong>
+                                <span className="text-slate-600"> Instantly start using the utility without registering an account.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Works in Browser:</strong>
+                                <span className="text-slate-600"> Fully client-side processing natively in your web browser.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Data Stored:</strong>
+                                <span className="text-slate-600"> Your inputs are not saved, logged, or recorded on any server.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Mobile Friendly:</strong>
+                                <span className="text-slate-600"> Perfect responsive design for smartphones and tablets.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Instant Results:</strong>
+                                <span className="text-slate-600"> Lightning fast execution with zero loading screens.</span>
+                            </div>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Examples</h2>
+                        <div className="space-y-4">
+
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Version 4 (Random):</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> f47ac10b-58cc-4372-a567-0e02b2c3d479 (Best for primary keys)</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Is it safe to generate UUIDs in the browser?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Yes. Modern browsers implement the Web Crypto API. Our generic UUID Generator leverages this secure cryptography module to generate truly random numbers that cannot be predicted, all without sending any data over the internet.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Version 1 (Time-based):</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> b444b7d0-1c5c-11ed-861d-0242ac120002 (Contains MAC address and timestamp)</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Can two generated UUIDs clash?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                While theoretically possible, a clash is so mathematically improbable that it can be ignored. To put it in perspective: you would need to generate 1 billion UUIDs every second for approximately 85 years to reach a 50% probability of a single collision.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Bulk Generation:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Quickly generate 100 IDs for populating a mock database table.</p>
                         </div>
-                    </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-4">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is this tool free?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, generate as many UUIDs as you need for free.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is my data safe?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes. All UUIDs are generated directly in your browser and are never stored.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Does it work on mobile?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, it is fully responsive on mobile devices.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">What is the difference between UUID and GUID?</h4>
+                            <p className="text-slate-600 leading-relaxed">Nothing practically. GUID (Globally Unique Identifier) is simply Microsoft's implementation of the UUID standard.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Can a Version 4 UUID ever be a duplicate?</h4>
+                            <p className="text-slate-600 leading-relaxed">Technically possible, but probabilistically impossible. You would need to generate 1 billion UUIDs every second for 85 years to have a 50% chance of a collision.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Related Tools</h2>
+                        <div className="grid sm:grid-cols-3 gap-4">
+
+                        <a href="/tools/json-formatter" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">JSON Formatter &rarr;</span>
+                        </a>
+                        <a href="/tools/jwt-decoder" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">JWT Decoder &rarr;</span>
+                        </a>
+                        <a href="/tools/base64-encoder-decoder" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Base64 Encoder & Decoder &rarr;</span>
+                        </a>
+                        </div>
+                    </section>
                 </article>
+            
             </div>
         </div>
     );

@@ -3,7 +3,7 @@ export const metadata = {
     description:
         "Read the Terms and Conditions for using TempMail.sbs - the free temporary disposable email service.",
     openGraph: {
-        title: "Terms and Conditions - TempMail.sbs",
+        title: "Terms and Conditions",
         description: "Read the Terms and Conditions for using TempMail.sbs.",
     },
     alternates: {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
     return (
@@ -22,11 +23,13 @@ const Footer = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
+                        <Image
                             src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
                             alt="Buy Me A Coffee"
-                            style={{ height: "45px", width: "162px" }}
+                            width={162}
+                            height={45}
+                            unoptimized // Since it's a dynamic badge button, unoptimized is fine or you can let Next.js optimize it. We'll let it optimize.
+                            className="h-[45px] w-[162px]"
                         />
                     </a>
                 </div>

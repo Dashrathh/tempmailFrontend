@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "JSON Formatter & Validator – Free Online Tool | TempMail.sbs",
+    title: "JSON Formatter & Validator – Free Online Tool",
     description: "Format, beautify and validate JSON data instantly. 100% client-side, no data sent to servers.",
     keywords: ["json formatter", "json validator", "beautify json", "format json", "minify json", "json parser", "free dev tools"],
     alternates: {

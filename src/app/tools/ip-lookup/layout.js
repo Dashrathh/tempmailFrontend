@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "What Is My IP Address? – IP Lookup Tool | TempMail.sbs",
+    title: "What Is My IP Address? – IP Lookup Tool",
     description: "Find your public IP address, location, ISP and network details instantly. Free IPv4/IPv6 lookup tool.",
     keywords: ["what is my ip", "ip lookup", "ip geolocation", "find ip address", "trace ip location", "check my ip", "public ip address"],
     alternates: {

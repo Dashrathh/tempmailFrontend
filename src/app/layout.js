@@ -58,7 +58,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Temp Mail in 5 Seconds | TempMail.sbs",
+    title: "Free Temp Mail in 5 Seconds",
     images: {
       url: "https://www.tempmail.sbs/tempu.png",
       alt: "tempMail",

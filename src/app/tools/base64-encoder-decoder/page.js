@@ -86,9 +86,7 @@ export default function Base64EncoderDecoder() {
                     <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-4 text-center">
                         Base64 Encoder & Decoder
                     </h1>
-                    <p className="text-slate-600 mb-8 text-center max-w-xl">
-                        Instantly encode text to Base64 or decode Base64 strings back to readable text. Upload files to encode them too. 100% client-side.
-                    </p>
+                    <p className="text-slate-600 mb-8 text-center max-w-xl">Instantly encode text to Base64 or decode Base64 strings back to readable text. Upload files to encode them too. 100% client-side. Free, no signup required.</p>
 
                     <div className="w-full bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden p-6 md:p-8">
 
@@ -192,42 +190,176 @@ export default function Base64EncoderDecoder() {
                 </div>
 
                 {/* SEO Content */}
-                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-4">What is Base64 Encoding?</h2>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                        Base64 is a binary-to-text encoding scheme that converts binary data into an ASCII string format using a set of 64 printable characters (A–Z, a–z, 0–9, +, /). It's widely used in web development, email systems (MIME), data URIs, and API authentication (like Basic Auth headers).
-                    </p>
+                
+                {/* SEO & EDUCATIONAL SECTION */}
+                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto mt-12 w-full">
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">What is a Base64 Encoder & Decoder?</h2>
+                        <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                            <p>The Base64 Encoder & Decoder is a developer utility used to convert regular human-readable text into a secure Base64 format, or to reverse a Base64 string back into readable text.</p>
+                            <p>When transferring binary data, complex tokens, or images over text-based protocols (like JSON, XML, or Email), formatting can break and cause corruption. Converting that data into standard Base64 ensures it survives transport across the internet intact. This tool allows developers to quickly manually inspect or build Base64 strings.</p>
+                        </div>
+                    </section>
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Common Use Cases</h3>
-                    <ul className="space-y-3 mb-8 text-slate-600 list-disc pl-5">
-                        <li><strong className="text-slate-800">Email Attachments (MIME):</strong> Email protocols like SMTP only support ASCII text. Base64 encodes binary attachments (images, PDFs) so they can travel through email safely.</li>
-                        <li><strong className="text-slate-800">Data URIs:</strong> Embed small images directly in HTML/CSS using <code>data:image/png;base64,...</code> instead of external file references.</li>
-                        <li><strong className="text-slate-800">API Authentication:</strong> HTTP Basic Auth encodes <code>username:password</code> in Base64 before sending in the Authorization header.</li>
-                        <li><strong className="text-slate-800">JWT Tokens:</strong> JSON Web Tokens use Base64Url encoding for the header and payload sections.</li>
-                        <li><strong className="text-slate-800">Storing Binary in JSON/XML:</strong> Since JSON doesn't support binary data, Base64 lets you embed images or files inside JSON payloads.</li>
-                    </ul>
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">How to Use Base64 Encoder & Decoder</h2>
+                        <ul className="space-y-4">
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Frequently Asked Questions</h3>
-                    <div className="space-y-6">
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Is Base64 encryption?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                No. Base64 is an <strong>encoding</strong> scheme, not encryption. Anyone can decode a Base64 string instantly — it provides zero security. It's designed for data transport, not data protection.
-                            </p>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                1
+                            </div>
+                            <p className="text-slate-600 mt-1">Choose 'Encode' or 'Decode' using the toggle options at the top.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                2
+                            </div>
+                            <p className="text-slate-600 mt-1">Paste your text or Base64 string into the input box.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                3
+                            </div>
+                            <p className="text-slate-600 mt-1">The tool mathematically converts your string in real-time.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                4
+                            </div>
+                            <p className="text-slate-600 mt-1">Review the result in the output box.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                5
+                            </div>
+                            <p className="text-slate-600 mt-1">Click 'Copy' to immediately add the result to your clipboard.</p>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Features</h2>
+                        <ul className="grid md:grid-cols-2 gap-6">
+
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">100% Free:</strong>
+                                <span className="text-slate-600"> Unlimited use without any hidden fees or premium locks.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Signup:</strong>
+                                <span className="text-slate-600"> Instantly start using the utility without registering an account.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Works in Browser:</strong>
+                                <span className="text-slate-600"> Fully client-side processing natively in your web browser.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Data Stored:</strong>
+                                <span className="text-slate-600"> Your inputs are not saved, logged, or recorded on any server.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Mobile Friendly:</strong>
+                                <span className="text-slate-600"> Perfect responsive design for smartphones and tablets.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Instant Results:</strong>
+                                <span className="text-slate-600"> Lightning fast execution with zero loading screens.</span>
+                            </div>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Examples</h2>
+                        <div className="space-y-4">
+
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Encoding:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Hello World becomes SGVsbG8gV29ybGQ=</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Why does Base64 increase file size?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Base64 represents 3 bytes of binary data as 4 ASCII characters, resulting in approximately a 33% increase in size. This is the tradeoff for being able to safely transmit binary data through text-only channels.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Decoding:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> QWRtaW4= translates back into Admin</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Is my data safe with this tool?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Yes. All encoding and decoding happens entirely in your browser using JavaScript's native <code>btoa()</code> and <code>atob()</code> functions. No data is sent to any server.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Verifying Data:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Checking a Base64 string from a database payload to see what text it represents.</p>
                         </div>
-                    </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-4">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is this tool free?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, encode and decode all you want for free.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is my data safe?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, the Base64 conversion relies entirely on standard JavaScript API functions right on your device. No data is sent out.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Does it work on mobile?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, it adapts flawlessly to mobile screens.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is Base64 a form of encryption?</h4>
+                            <p className="text-slate-600 leading-relaxed">No! Base64 is only an 'encoding' scheme designed to protect data format during transit, not a security encryption. Anyone can decode it.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Why do some Base64 strings end in equals signs (=)?</h4>
+                            <p className="text-slate-600 leading-relaxed">The `=` character is used as padding to ensure the final string is a multiple of 4 bytes, adhering to the Base64 specification.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Related Tools</h2>
+                        <div className="grid sm:grid-cols-3 gap-4">
+
+                        <a href="/tools/url-encoder-decoder" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">URL Encoder & Decoder &rarr;</span>
+                        </a>
+                        <a href="/tools/jwt-decoder" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">JWT Decoder &rarr;</span>
+                        </a>
+                        <a href="/tools/json-formatter" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">JSON Formatter &rarr;</span>
+                        </a>
+                        </div>
+                    </section>
                 </article>
             </div>
         </div>

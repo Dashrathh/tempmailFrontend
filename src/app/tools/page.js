@@ -2,7 +2,7 @@ import Link from "next/link";
 import { KeyRound, ShieldCheck, Mail, CheckCircle2, Globe, FileJson, ShieldAlert, Type, Key, Link2, Binary, AlignLeft } from "lucide-react";
 
 export const metadata = {
-    title: "Free Online Tools – Password Generator, IP Lookup & More | TempMail.sbs",
+    title: "Free Online Tools – Password Generator, IP Lookup & More",
     description: "Free privacy and web tools — password generator, IP lookup, email validator, QR code generator and more. No signup, 100% free.",
     keywords: ["free online tools", "password generator", "email tools", "privacy tools", "web tools", "random password generator"],
     alternates: {
@@ -167,9 +167,11 @@ export default function ToolsHub() {
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-100">
                                     {tool.icon}
                                 </div>
-                                <span className={`text-xs px-3 py-1 rounded-full border ${tool.tagColor} font-medium`}>
-                                    {tool.tag}
-                                </span>
+                                {tool.tag && (
+                                    <span className={`text-xs px-3 py-1 rounded-full border ${tool.tagColor} font-medium`}>
+                                        {tool.tag}
+                                    </span>
+                                )}
                             </div>
                             <h2 className="text-xl font-bold text-slate-900 mb-2">{tool.title}</h2>
                             <p className="text-slate-500 text-sm leading-relaxed flex-grow">
@@ -224,6 +226,69 @@ export default function ToolsHub() {
                                     <p className="text-sm text-slate-600 mt-1">Use our tools seamlessly on your smartphone, tablet, or desktop computer.</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Ultimate Web Tools Guide & FAQs Section (SEO Focused) */}
+                <div className="max-w-4xl mx-auto mt-16 px-4 md:px-0 pb-12 border-t border-slate-200 pt-16">
+                    <h2 className="text-3xl font-bold text-slate-900 mb-6">The Ultimate Suite of Free Online Tools</h2>
+                    
+                    <div className="prose prose-slate max-w-none mb-12">
+                        <p className="text-slate-600 leading-relaxed mb-6">
+                            Welcome to the web's most reliable collection of privacy-first, client-side digital utilities. 
+                            Whether you're an everyday internet user aiming to secure your online presence, or a developer 
+                            looking for quick, trustworthy utilities, you've come to the right place. 
+                            Unlike many other platforms, we don't bombard you with intrusive ads, force you to create an account, or secretly harvest the data you input.
+                        </p>
+                        
+                        <h3 className="text-xl font-semibold text-slate-800 mb-4">Why Privacy-First Tools Matter</h3>
+                        <p className="text-slate-600 leading-relaxed mb-6">
+                            Imagine using a random web tool to decode a sensitive JSON file, or an online generator to create a crucial database password. 
+                            If that tool operates server-side, you are essentially handing over your private data to an unknown entity. 
+                            Our core philosophy is simple: what happens in your browser, stays in your browser. 
+                            From our <strong>Password Generator</strong> to our <strong>JSON Formatter</strong>, computations are handled locally on your device via client-side JavaScript. 
+                            This guarantees absolute data privacy and blistering fast execution speeds.
+                        </p>
+                        
+                        <h3 className="text-xl font-semibold text-slate-800 mb-4">Our Commitment to Developers and Everyday Users</h3>
+                        <p className="text-slate-600 leading-relaxed mb-8">
+                            We bridge the gap between complex developer tools and user-friendly interfaces. 
+                            A web developer can effortlessly use our <strong>JWT Decoder</strong> to debug authentication tokens or the <strong>Base64 Encoder</strong> during daily coding tasks. 
+                            Simultaneously, a casual user can check if their data was exposed in a breach using our <strong>Email Breach Checker</strong>, or instantly get random words for a game night with our <strong>Random Word Generator</strong>. 
+                            Every tool is designed to be self-explanatory, robust, and accessible from both desktop and mobile devices.
+                        </p>
+                    </div>
+
+                    <h2 className="text-3xl font-bold text-slate-900 mb-8 border-t border-slate-200 pt-12">Frequently Asked Questions</h2>
+                    
+                    <div className="space-y-6">
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Are these tools really 100% free?</h4>
+                            <p className="text-slate-600">
+                                Yes. Every tool listed on this hub—from the IP Lookup to the Password Breach Scanner—is completely free to use. There are no paid tiers, hidden subscriptions, or limits on how many times you can use them per day.
+                            </p>
+                        </div>
+                        
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">How do you ensure my data isn't stolen?</h4>
+                            <p className="text-slate-600">
+                                The vast majority of our tools are built using client-side processing technologies. This means when you generate a password, decode a JWT, or format JSON, the processing utilizes your device's CPU right inside your web browser. The data is never sent across the internet to our servers.
+                            </p>
+                        </div>
+                        
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Can I use these tools on my mobile phone?</h4>
+                            <p className="text-slate-600">
+                                Absolutely. The entire suite of tools is built with a mobile-first responsive design. Whether you are generating a QR code on the go using your smartphone or working on a massive desktop monitor, the tools will adapt seamlessly to provide a perfect user experience.
+                            </p>
+                        </div>
+                        
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Do I need to create an account?</h4>
+                            <p className="text-slate-600">
+                                No registration is required. We believe in providing friction-free utilities. You can bookmark this page and access any tool instantly without email signups or giving up any personal information.
+                            </p>
                         </div>
                     </div>
                 </div>

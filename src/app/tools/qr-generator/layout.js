@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "QR Code Generator – Free & Instant | TempMail.sbs",
+    title: "QR Code Generator – Free & Instant",
     description: "Convert any URL, text or email into a QR code instantly. Free, fast and secure.",
     keywords: ["qr code generator", "free qr code creator", "custom qr code", "qr code maker", "generate qr code online"],
     alternates: {

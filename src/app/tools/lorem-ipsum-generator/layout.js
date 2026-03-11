@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "Lorem Ipsum Generator – Free Placeholder Text | TempMail.sbs",
+    title: "Lorem Ipsum Generator – Free Placeholder Text",
     description: "Generate lorem ipsum placeholder text instantly. Customize paragraphs, sentences, or words. Free tool for designers and developers.",
     keywords: ["lorem ipsum generator", "placeholder text", "dummy text generator", "lorem ipsum", "sample text", "filler text"],
     alternates: {

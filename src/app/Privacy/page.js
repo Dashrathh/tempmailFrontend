@@ -3,7 +3,7 @@ export const metadata = {
     description:
         "Read the TempMail.sbs Privacy Policy. We do not collect personal data. Your temporary emails are auto-deleted.",
     openGraph: {
-        title: "Privacy Policy - TempMail.sbs",
+        title: "Privacy Policy",
         description:
             "Read the TempMail.sbs Privacy Policy. We do not collect personal data.",
     },

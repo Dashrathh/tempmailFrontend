@@ -72,9 +72,7 @@ export default function RandomWordGenerator() {
                     <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
                         Random Word Generator
                     </h1>
-                    <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                        Generate instant random words for brainstorming, writing prompts, Pictionary, Catchphrase, and games.
-                    </p>
+                    <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">Generate instant random words for brainstorming, writing prompts, Pictionary, Catchphrase, and games. Free, no signup required.</p>
                 </div>
 
                 {/* Generator Card */}
@@ -196,47 +194,178 @@ export default function RandomWordGenerator() {
                     </div>
                 </div>
 
-                {/* Info / SEO Section */}
-                <div className="grid lg:grid-cols-2 gap-6 mt-16">
-                    <div className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-100 space-y-4 hover:border-blue-200 transition-colors">
-                        <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-2">
-                            <span className="text-2xl">🎮</span>
+                
+                {/* SEO & EDUCATIONAL SECTION */}
+                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto mt-12 w-full text-left">
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">What is a Random Word Generator?</h2>
+                        <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                            <p>The Random Word Generator is a highly versatile tool that outputs random nouns, verbs, and adjectives from a curated dictionary database. It features a unique 'Game Mode' designed specifically for group game nights.</p>
+                            <p>Whether you are a writer suffering from a creative block, a teacher looking for vocabulary words, or friends playing Pictionary or Charades, trying to think of random words manually is inherently biased. This tool provides instant, truly randomized words spanning various complexities.</p>
                         </div>
-                        <h2 className="text-2xl font-bold text-slate-800">Perfect for Party Games</h2>
-                        <p className="text-slate-600 leading-relaxed text-sm">
-                            Need random words for party games? Whether you're playing <strong>Pictionary</strong>, <strong>Catchphrase</strong>, <strong>Charades</strong>, or <strong>Mad Libs</strong>, our tool is your best companion. No more carrying messy cards!
-                        </p>
-                        <h3 className="font-semibold text-slate-800 mt-4">How to use for Pictionary:</h3>
-                        <ul className="list-disc pl-5 text-sm text-slate-600 space-y-1 marker:text-blue-500">
-                            <li>Set the generator to <strong>1 word</strong> to enter "Game Mode" (it will display the word extra large).</li>
-                            <li>Choose <strong>Nouns</strong> for easier drawing, or <strong>All Types</strong> for a challenge.</li>
-                            <li>Click "Generate" when the timer starts for the drawing player!</li>
-                        </ul>
-                    </div>
+                    </section>
 
-                    <div className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-100 space-y-4 hover:border-emerald-200 transition-colors">
-                        <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-2">
-                            <span className="text-2xl">✍️</span>
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">How to Use Random Word Generator</h2>
+                        <ul className="space-y-4">
+
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                1
+                            </div>
+                            <p className="text-slate-600 mt-1">Select exactly how many random words you want to generate (using the slider).</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                2
+                            </div>
+                            <p className="text-slate-600 mt-1">Click the 'Generate Words' button.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                3
+                            </div>
+                            <p className="text-slate-600 mt-1">Review your list of randomly selected words.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                4
+                            </div>
+                            <p className="text-slate-600 mt-1">Enable 'Game Mode' by setting the word count to exactly 1. This makes the word gigantic for everyone in the room to read.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                5
+                            </div>
+                            <p className="text-slate-600 mt-1">Click 'Copy Words' if you need to paste them into a document or chat.</p>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Features</h2>
+                        <ul className="grid md:grid-cols-2 gap-6">
+
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">100% Free:</strong>
+                                <span className="text-slate-600"> Unlimited word generation without hidden fees.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Signup:</strong>
+                                <span className="text-slate-600"> Use the tool instantly without creating an account.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Works in Browser:</strong>
+                                <span className="text-slate-600"> Fully client-side script natively in your web browser.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Data Stored:</strong>
+                                <span className="text-slate-600"> Your words are not saved, logged, or recorded.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Mobile Friendly:</strong>
+                                <span className="text-slate-600"> Perfect responsive design for parties and games.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Instant Results:</strong>
+                                <span className="text-slate-600"> Lightning fast execution with zero loading screens.</span>
+                            </div>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Examples</h2>
+                        <div className="space-y-4">
+
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Pictionary & Charades:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Generate a single noun and pass the phone around so players can draw or act.</p>
                         </div>
-                        <h2 className="text-2xl font-bold text-slate-800">For Writers & Developers</h2>
-                        <p className="text-slate-600 leading-relaxed text-sm">
-                            Overcome writer's block by using random nouns and adjectives as writing prompts. Sometimes, combining two completely random words is all it takes to spark your next big creative idea.
-                        </p>
-                        <h3 className="font-semibold text-slate-800 mt-4">Other Utility Uses:</h3>
-                        <ul className="list-disc pl-5 text-sm text-slate-600 space-y-1 marker:text-emerald-500">
-                            <li><strong>Vocabulary Practice:</strong> Generate adjectives and verify their meaning to improve English fluency.</li>
-                            <li><strong>Developers:</strong> Generate random dummy text or mock database content instantly without external API calls.</li>
-                            <li><strong>Naming:</strong> Combine 2-3 random words to name your next project, band, or business.</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Creative Writing Prompts:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Generate 5 random verbs and nouns, and force yourself to write a short story.</p>
+                        </div>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Brainstorming:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Generating random adjectives to conceptualize a new startup brand name.</p>
+                        </div>
+                        </div>
+                    </section>
 
-                <div className="bg-slate-900 text-white p-8 sm:p-12 rounded-3xl mt-12 shadow-2xl text-center space-y-6">
-                    <h2 className="text-3xl font-extrabold mb-4">Why Use Our Random Word Generator?</h2>
-                    <p className="text-slate-300 max-w-3xl mx-auto leading-relaxed text-lg">
-                        Unlike other tools, our Random Word Generator processes everything directly in your browser using a curated dictionary of highly-optimized words. This means <strong>zero loading times</strong>, absolute privacy, and the ability to generate thousands of combinations instantly. Whether you need a random noun to draw, a random verb to act out, or a completely random Catchphrase word for family game night, we have you fully covered.
-                    </p>
-                </div>
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-4">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is this tool free?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, generate thousands of words for free.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is my data safe?</h4>
+                            <p className="text-slate-600 leading-relaxed">Absolutely. The dictionary is loaded into your browser and no external requests are tracked.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Does it work on mobile?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes! 'Game Mode' was specifically built so you can read the word clearly on a small mobile screen during a party.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Does your dictionary include offensive words?</h4>
+                            <p className="text-slate-600 leading-relaxed">No. We have carefully curated the dictionary to be 100% PG and family-friendly, perfect for schools and children's games.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Can I choose just Adjectives?</h4>
+                            <p className="text-slate-600 leading-relaxed">Currently the tool pulls from a mixed database of nouns, verbs, and adjectives to provide maximum unpredictability.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Related Tools</h2>
+                        <div className="grid sm:grid-cols-3 gap-4">
+
+                        <a href="/tools/word-counter" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Word Counter &rarr;</span>
+                        </a>
+                        <a href="/tools/lorem-ipsum-generator" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Lorem Ipsum Generator &rarr;</span>
+                        </a>
+                        <a href="/tools/uuid-generator" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">UUID Generator &rarr;</span>
+                        </a>
+                        </div>
+                    </section>
+                </article>
+            
             </div>
         </main>
     );

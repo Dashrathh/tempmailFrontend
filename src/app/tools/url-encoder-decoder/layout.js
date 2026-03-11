@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "URL Encoder & Decoder – Free Online Tool | TempMail.sbs",
+    title: "URL Encoder & Decoder – Free Online Tool",
     description: "Easily encode or decode URL strings securely. A free developer tool to format URLs and convert special characters into valid formats.",
     keywords: ["url encoder", "url decoder", "encode url online", "decode url online", "url parser", "percent encoding", "developer tools"],
     alternates: {

@@ -68,9 +68,7 @@ export default function IPLookup() {
                     <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-4 text-center">
                         IP Lookup & Geolocation
                     </h1>
-                    <p className="text-slate-600 mb-8 text-center max-w-xl">
-                        Instantly check your public IP address or lookup the geolocation, ISP, and network details of any IPv4/IPv6 address worldwide.
-                    </p>
+                    <p className="text-slate-600 mb-8 text-center max-w-xl">Instantly check your public IP address or lookup the geolocation, ISP, and network details of any IPv4/IPv6 address worldwide. Free, no signup required.</p>
 
                     <div className="w-full bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden p-6 md:p-10">
                         {/* Search Bar */}
@@ -248,66 +246,178 @@ export default function IPLookup() {
                     </div>
                 </div>
 
+                
                 {/* SEO & EDUCATIONAL SECTION */}
-                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-4">What is an IP Address?</h2>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                        An <strong>IP (Internet Protocol) address</strong> is a unique string of numbers separated by periods (IPv4) or colons (IPv6). It acts as a digital home address for devices connected to the internet. Every time you visit a website, send an email, or stream a video, your device uses this IP address to communicate with servers and receive data back.
-                    </p>
+                <article className="max-w-4xl border-t border-slate-200 pt-16 mx-auto mt-12 w-full">
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">What is a IP Address Lookup?</h2>
+                        <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                            <p>An IP Lookup tool allows you to instantly discover the geographic location, Internet Service Provider (ISP), and network details associated with any public IP address. It automatically detects your current IP address when you load the page, but you can also manually search for any IPv4 or IPv6 address.</p>
+                            <p>Whether you are a web developer troubleshooting networking issues, a security analyst tracking down the source of malicious traffic, or a regular user wanting to see what information your IP reveals to the websites you visit, this tool provides real-time, accurate geolocation and ASN data.</p>
+                        </div>
+                    </section>
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">IPv4 vs IPv6: What's the difference?</h3>
-                    <div className="grid md:grid-cols-2 gap-8 mt-6 mb-8 bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                        <div>
-                            <h4 className="font-bold text-slate-800 mb-2">IPv4 (Legacy Standard)</h4>
-                            <p className="text-sm text-slate-600 leading-relaxed mb-3">Example: <code>192.168.1.1</code></p>
-                            <p className="text-sm text-slate-600 leading-relaxed">
-                                IPv4 uses a 32-bit address scheme allowing for roughly 4.3 billion unique addresses. Because of the massive growth of the internet, the world officially ran out of new IPv4 addresses in 2011.
-                            </p>
-                        </div>
-                        <div>
-                            <h4 className="font-bold text-slate-800 mb-2">IPv6 (Modern Standard)</h4>
-                            <p className="text-sm text-slate-600 leading-relaxed mb-3">Example: <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code></p>
-                            <p className="text-sm text-slate-600 leading-relaxed">
-                                IPv6 uses a 128-bit address scheme, allowing for an astronomical number of IPs (340 undecillion). It allows the internet to scale infinitely as more smart devices and phones come online.
-                            </p>
-                        </div>
-                    </div>
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">How to Use IP Address Lookup</h2>
+                        <ul className="space-y-4">
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Why hide or change your IP Address?</h3>
-                    <ul className="space-y-3 mb-8 text-slate-600 list-disc pl-5">
-                        <li><strong className="text-slate-800">Privacy & Anonymity:</strong> Your IP address can reveal your general physical location (City/Region) and your Internet Service Provider. Using a Virtual Private Network (VPN) masks your real IP.</li>
-                        <li><strong className="text-slate-800">Geo-Unblocking:</strong> Many streaming services and websites restrict content based on your country. Changing your IP via a VPN bypasses these digital borders.</li>
-                        <li><strong className="text-slate-800">Security:</strong> Hiding your IP address makes it significantly harder for hackers to target your home network with DDoS attacks.</li>
-                    </ul>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                1
+                            </div>
+                            <p className="text-slate-600 mt-1">Load the page, and your current IP address will be automatically detected and displayed.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                2
+                            </div>
+                            <p className="text-slate-600 mt-1">To look up a different IP, type the IPv4 or IPv6 address into the search bar.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                3
+                            </div>
+                            <p className="text-slate-600 mt-1">Click the 'Lookup IP' button to fetch the data.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                4
+                            </div>
+                            <p className="text-slate-600 mt-1">Review the interactive map, location details (City, Region, Country), and ISP provider.</p>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                5
+                            </div>
+                            <p className="text-slate-600 mt-1">Use the 'Copy' button to quickly copy the IP address for your records.</p>
+                        </li>
+                        </ul>
+                    </section>
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">Frequently Asked Questions</h3>
-                    <div className="space-y-6">
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Can I find someone's IP address from their Mobile Number?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                No. You cannot find an IP address purely by entering a mobile number. Phone networks (Cellular) and Data networks (IPs) operate independently. Tools online that claim to "Find IP by Phone Number" are generally scams or rely on sending tracking links directly to the target device via SMS.
-                            </p>
+                    <section className="mb-12 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Features</h2>
+                        <ul className="grid md:grid-cols-2 gap-6">
+
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">100% Free:</strong>
+                                <span className="text-slate-600"> Unlimited use without any hidden fees or premium locks.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Signup:</strong>
+                                <span className="text-slate-600"> Instantly start using the utility without registering an account.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Works in Browser:</strong>
+                                <span className="text-slate-600"> Fully client-side processing natively in your web browser.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">No Data Stored:</strong>
+                                <span className="text-slate-600"> Your inputs are not saved, logged, or recorded on any server.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Mobile Friendly:</strong>
+                                <span className="text-slate-600"> Perfect responsive design for smartphones and tablets.</span>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <svg className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <div>
+                                <strong className="text-slate-800">Instant Results:</strong>
+                                <span className="text-slate-600"> Lightning fast execution with zero loading screens.</span>
+                            </div>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Examples</h2>
+                        <div className="space-y-4">
+
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">Your IP:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> Shows your current public IP exposed to the internet.</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Can someone find my exact house from my IP?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                No. A public IP address only reveals your general location (like your city or zip code) and your ISP (like Comcast or AT&T). Only your Internet Service Provider knows the exact physical residential address associated with the IP, and they securely protect this data unless ordered by a legal warrant.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">IPv4 Example:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> 8.8.8.8 (Reveals the IP belongs to Google LLC in California)</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Why does my IP address keep changing?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                Most home networks and mobile 4G/5G connections use "Dynamic IP Addresses." This means your ISP periodically assigns you a new IP address from a pool of available numbers. Only businesses typically pay extra for "Static IP Addresses" that never change.
-                            </p>
+                        <div className="border-l-4 border-blue-500 pl-4 py-1">
+                            <strong className="text-slate-800">IPv6 Example:</strong>
+                            <p className="text-slate-600 mt-1 font-mono text-sm bg-slate-50 p-2 rounded"> 2001:4860:4860::8888 (Validates and maps the modern IPv6 address format)</p>
                         </div>
-                        <div>
-                            <h4 className="font-semibold text-slate-800">Does this tool log my IP?</h4>
-                            <p className="text-slate-600 text-sm mt-1">
-                                No. We respect your privacy. The IP lookup happens instantly and directly via our secure API provider, and we do not store, trace, or log the IP addresses you search for in our databases.
-                            </p>
                         </div>
-                    </div>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-4">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is this tool free?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes, our IP Lookup tool is 100% free to use.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Is my data safe?</h4>
+                            <p className="text-slate-600 leading-relaxed">Yes. We respect your privacy and do not log or store the IP addresses you search for.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Does it work on mobile?</h4>
+                            <p className="text-slate-600 leading-relaxed">Absolutely. You can look up IP addresses seamlessly on any mobile network.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Can this tool find a person's exact physical address?</h4>
+                            <p className="text-slate-600 leading-relaxed">No. IP lookup tools only provide the general residential area (like City or Zip Code) and the ISP. Your exact house address remains private.</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">Why does my IP show a different city?</h4>
+                            <p className="text-slate-600 leading-relaxed">ISPs often route traffic through centralized data centers. It's common for an IP block to be registered in a nearby major city rather than your exact local town.</p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <section className="mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Related Tools</h2>
+                        <div className="grid sm:grid-cols-3 gap-4">
+
+                        <a href="/tools/url-encoder-decoder" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">URL Encoder & Decoder &rarr;</span>
+                        </a>
+                        <a href="/tools/email-validator" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">Email Validator &rarr;</span>
+                        </a>
+                        <a href="/tools/json-formatter" className="block p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                            <span className="font-semibold text-blue-700">JSON Formatter &rarr;</span>
+                        </a>
+                        </div>
+                    </section>
                 </article>
+            
             </div>
         </div>
     );

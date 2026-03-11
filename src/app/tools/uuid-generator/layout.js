@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "UUID / GUID Generator – Free Bulk Generator | TempMail.sbs",
+    title: "UUID / GUID Generator – Free Bulk Generator",
     description: "Generate random UUID v1 and v4 identifiers instantly. Free bulk UUID generator tool.",
     keywords: ["uuid generator", "guid generator", "random uuid", "generate guid online", "v4 uuid", "bulk uuid generator"],
     alternates: {

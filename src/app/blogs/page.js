@@ -8,7 +8,7 @@ export const metadata = {
     description:
         "Learn about temporary email, privacy, and spam protection. Read our latest blog posts on TempMail.sbs.",
     openGraph: {
-        title: "Blog | Tempmail.sbs",
+        title: "Blog",
         description:
             "Learn about temporary email, privacy, and spam protection.",
         url: "https://www.tempmail.sbs/blogs",
