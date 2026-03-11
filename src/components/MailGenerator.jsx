@@ -351,13 +351,72 @@ export default function EmailGenerator() {
                     </div>
                 </div>
 
-                {/* Footer Text */}
-                <p className="text-center text-sm text-gray-400 mt-8 leading-relaxed">
+            {/* Footer Text */}
+            <div className="mt-8">
+                <p className="text-center text-sm text-gray-400 leading-relaxed mb-6">
                     Protect your online privacy with temporary, secure email addresses.
                     <br />
                     No registration required • Completely anonymous • Free forever
                 </p>
+
+                {/* Featured On — Centered, both badges together */}
+                <div className="pt-8 border-t border-gray-700/50 mt-8 mb-4">
+                    <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-widest text-center mb-6">
+                        Trusted & Featured On
+                    </h3>
+                    <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-6">
+                        <a
+                            href="https://www.producthunt.com/products/tempmail-3"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=423257&theme=dark"
+                                alt="TempMail.sbs on Product Hunt"
+                                className="h-10 hover:scale-105 transition-transform duration-200"
+                            />
+                        </a>
+                        <a
+                            href="https://startupfound.com/s/tempmailsbs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="https://startupfound.com/badges/badge-dark.svg"
+                                alt="Find TempMail.sbs on StartupFound"
+                                className="h-10 hover:scale-105 transition-transform duration-200 opacity-90 hover:opacity-100"
+                            />
+                        </a>
+                        <a
+                            href="https://startupfa.me/s/tempmailsbs?utm_source=www.tempmail.sbs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="https://startupfa.me/badges/featured-badge-small.webp"
+                                alt="TempMail.sbs - Featured on Startup Fame"
+                                className="h-9 hover:scale-105 transition-transform duration-200 object-contain opacity-90 hover:opacity-100 mix-blend-screen"
+                            />
+                        </a>
+                        <a
+                            href="https://wired.business"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="https://wired.business/badge0-dark.svg"
+                                alt="Featured on Wired Business"
+                                className="h-10 hover:scale-105 transition-transform duration-200 opacity-90 hover:opacity-100"
+                            />
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    );
+    </div>
+);
 }

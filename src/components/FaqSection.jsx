@@ -135,51 +135,7 @@ const FaqSection = () => {
                     ))}
                 </div>
 
-                {/* Featured On — Centered, both badges together */}
-                <div className="mt-16 text-center">
-                    <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-6">
-                        Featured On
-                    </h3>
-                    <div className="flex flex-wrap items-center justify-center gap-4">
-                        <a
-                            href="https://www.producthunt.com/products/tempmail-3"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=423257&theme=light"
-                                alt="TempMail.sbs on Product Hunt"
-                                className="h-10 hover:scale-105 transition-transform duration-200"
-                            />
-                        </a>
-                        <a
-                            href="https://startupfound.com/s/tempmailsbs"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src="https://startupfound.com/badges/badge-light.svg"
-                                alt="Find TempMail.sbs on StartupFound"
-                                className="h-10 hover:scale-105 transition-transform duration-200"
-                            />
-                        </a>
-                        <a
-                            href="https://startupfa.me/s/tempmailsbs?utm_source=www.tempmail.sbs"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src="https://startupfa.me/badges/featured-badge-small.webp"
-                                alt="TempMail.sbs - Featured on Startup Fame"
-                                width="224"
-                                height="36"
-                            />
-                        </a>
-                    </div>
-                </div>
+
             </div>
         </section>
     );

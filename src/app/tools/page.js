@@ -65,6 +65,15 @@ const toolsList = [
         tagColor: "bg-blue-50 text-blue-600 border-blue-200"
     },
     {
+        id: "random-word-generator",
+        title: "Random Word Generator",
+        description: "Generate instant random words for brainstorming, Pictionary, Catchphrase, and creative writing.",
+        icon: <Type className="w-8 h-8 text-fuchsia-400" />,
+        href: "/tools/random-word-generator",
+        tag: "New",
+        tagColor: "bg-emerald-50 text-emerald-600 border-emerald-200"
+    },
+    {
         id: "json-formatter",
         title: "JSON Formatter",
         description: "Format, beautify, and validate JSON data instantly. 100% secure client-side parsing.",

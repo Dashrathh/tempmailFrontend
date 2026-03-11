@@ -139,6 +139,12 @@ export default function sitemap() {
             changeFrequency: "monthly",
             priority: 0.7,
         },
+        {
+            url: `${baseUrl}/tools/random-word-generator`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.7,
+        },
     ];
 
     // Data.js blog posts

@@ -92,22 +92,7 @@ const Footer = () => {
                             </Link>
                         </li>
 
-                        {/* Wired Badge */}
-                        <li className="w-full mt-4">
-                            <a
-                                href="https://wired.business"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                    src="https://wired.business/badge0-dark.svg"
-                                    alt="Featured on Wired Business"
-                                    width="200"
-                                    height="54"
-                                />
-                            </a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
