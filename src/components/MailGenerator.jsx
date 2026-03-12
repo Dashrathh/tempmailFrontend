@@ -4,6 +4,34 @@ import { useEffect, useState, useRef } from "react";
 import { API } from "@/utils/api";
 import QRCode from "qrcode";
 
+// 160x600 Side Banner Component
+function SideBanner() {
+    const ref = useRef(null);
+
+    useEffect(() => {
+        if (!ref.current) return;
+
+        const optScript = document.createElement("script");
+        optScript.innerHTML = `
+            atOptions = {
+                'key': '76212000070ff546cb6508fde55a2673',
+                'format': 'iframe',
+                'height': 600,
+                'width': 160,
+                'params': {}
+            };
+        `;
+        const invokeScript = document.createElement("script");
+        invokeScript.src = "https://www.highperformanceformat.com/76212000070ff546cb6508fde55a2673/invoke.js";
+        invokeScript.async = true;
+
+        ref.current.appendChild(optScript);
+        ref.current.appendChild(invokeScript);
+    }, []);
+
+    return <div ref={ref} className="w-[160px] h-[600px]" />;
+}
+
 export default function EmailGenerator() {
     const [mail, setMail] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -15,7 +43,6 @@ export default function EmailGenerator() {
     const [errorMsg, setErrorMsg] = useState("");
     const [qrCodeUrl, setQrCodeUrl] = useState("");
     const [showQR, setShowQR] = useState(false);
-
     const [selectedDomain, setSelectedDomain] = useState("tempmail.sbs");
     const domains = ["tempmail.sbs", "filmyhunt.xyz"];
 
@@ -23,13 +50,10 @@ export default function EmailGenerator() {
         setErrorMsg(msg);
         setTimeout(() => setErrorMsg(""), 4000);
     };
+
     const fetchMailDetails = async (regenerate = false) => {
-        if (regenerate) {
-            localStorage.removeItem("email");
-        }
-
+        if (regenerate) localStorage.removeItem("email");
         const emailExists = localStorage.getItem("email");
-
         if (emailExists) {
             setMail(emailExists);
         } else {
@@ -50,11 +74,9 @@ export default function EmailGenerator() {
         }
     };
 
-    // Handle both QR scan (URL parameter) and normal loading
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
         const emailFromUrl = urlParams.get("email");
-
         if (emailFromUrl) {
             setMail(emailFromUrl);
             localStorage.setItem("email", emailFromUrl);
@@ -64,23 +86,16 @@ export default function EmailGenerator() {
         }
     }, []);
 
-    // Generate QR Code whenever mail changes
     useEffect(() => {
-        if (mail && mail !== "Generating...") {
-            generateQRCode(mail);
-        }
+        if (mail && mail !== "Generating...") generateQRCode(mail);
     }, [mail]);
 
     const generateQRCode = async (email) => {
         try {
             const websiteUrl = `https://tempmail.sbs/?email=${encodeURIComponent(email)}`;
             const url = await QRCode.toDataURL(websiteUrl, {
-                width: 200,
-                margin: 2,
-                color: {
-                    dark: "#1e40af",
-                    light: "#ffffff",
-                },
+                width: 200, margin: 2,
+                color: { dark: "#1e40af", light: "#ffffff" },
             });
             setQrCodeUrl(url);
         } catch (error) {
@@ -90,10 +105,7 @@ export default function EmailGenerator() {
 
     const copyToClipboard = (text, ref) => {
         navigator.clipboard.writeText(text);
-        if (ref.current) {
-            ref.current.focus();
-            ref.current.select();
-        }
+        if (ref.current) { ref.current.focus(); ref.current.select(); }
         setShowNotification(true);
         setTimeout(() => setShowNotification(false), 2000);
     };
@@ -105,19 +117,11 @@ export default function EmailGenerator() {
         link.click();
     };
 
-    // Custom Mail
     const generateCustomMail = async () => {
-        if (!customMail) {
-            showError("Please enter a username for your custom email.");
-            return;
-        }
+        if (!customMail) { showError("Please enter a username for your custom email."); return; }
         try {
             setCustomLoading(true);
-            const { data: response } = await API.post(`/custom`, {
-                username: customMail,
-                domain: selectedDomain,
-            });
-
+            const { data: response } = await API.post(`/custom`, { username: customMail, domain: selectedDomain });
             if (response?.data) {
                 localStorage.setItem("email", response.data);
                 setMail(response.data);
@@ -133,290 +137,212 @@ export default function EmailGenerator() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 py-16 px-4 flex flex-col items-center">
-            <div className="text-center mb-10">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-100">
-                    Free Temporary Email
-                </h1>
+        <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 py-16 px-4">
 
-                <p className="text-gray-400 mt-4 text-lg max-w-2xl mx-auto leading-relaxed">
-                    Generate a disposable email address instantly to protect your privacy
-                    and keep your primary inbox free from spam.
-                </p>
-            </div>
+            {/* 3-column: LEFT AD | CONTENT | RIGHT AD */}
+            <div className="flex items-start justify-center gap-4">
 
-            <div className="bg-gray-800/90 backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-gray-700 max-w-4xl w-full space-y-8 relative">
-                {/* Notification */}
-                {showNotification && (
-                    <div className="animate-fade-in-down absolute top-4 right-4 bg-emerald-600/90 text-white px-4 py-2 rounded-lg text-sm shadow-md z-50">
-                        Copied to clipboard!
-                    </div>
-                )}
-
-                {errorMsg && (
-                    <div className="animate-fade-in-down absolute top-4 left-4 right-4 md:left-auto md:right-4 md:max-w-sm bg-red-600/90 text-white px-4 py-2 rounded-lg text-sm shadow-md z-50">
-                        ⚠️ {errorMsg}
-                    </div>
-                )}
-
-                <div className="grid md:grid-cols-2 gap-6">
-                    {/* Random Email Section */}
-                    <div className="space-y-6 p-6 bg-gray-900/50 rounded-xl border border-gray-700">
-                        <h2 className="text-xl font-semibold text-blue-300">
-                            Random Email
-                        </h2>
-                        <div className="flex flex-col gap-4">
-                            {/* Email Input with QR Button */}
-                            <div className="space-y-3">
-                                <div className="relative">
-                                    <input
-                                        ref={inputRef}
-                                        type="email"
-                                        value={loading ? "Generating..." : mail}
-                                        readOnly
-                                        className="w-full bg-gray-800 text-blue-100 font-mono text-lg p-3 rounded-lg border border-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 pr-20"
-                                        onFocus={(e) => e.target.select()}
-                                    />
-
-                                    <button
-                                        onClick={() => copyToClipboard(mail, inputRef)}
-                                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white p-2 rounded-lg shadow-md transition-all duration-200 group"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="w-5 h-5"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                            strokeWidth={2}
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                                            />
-                                        </svg>
-
-                                        <span className="absolute left-1/2 -translate-x-1/2 top-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs bg-gray-800 text-white px-2 py-1 rounded shadow-lg whitespace-nowrap z-10">
-                                            Copy to clipboard
-                                        </span>
-                                    </button>
-                                </div>
-
-                                {/* QR Code Toggle Button */}
-                                {mail && !loading && (
-                                    <button
-                                        onClick={() => setShowQR(!showQR)}
-                                        className="w-full bg-gray-700/50 hover:bg-gray-700 text-blue-300 font-medium px-4 py-2 rounded-lg transition-all flex items-center justify-center gap-2 border border-gray-600"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="w-5 h-5"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                            strokeWidth={2}
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"
-                                            />
-                                        </svg>
-                                        {showQR ? "Hide" : "Show"} QR Code
-                                    </button>
-                                )}
-
-                                {/* QR Code Display */}
-                                {showQR && qrCodeUrl && (
-                                    <div className="bg-white p-4 rounded-xl animate-fade-in space-y-3">
-                                        <div className="flex justify-center">
-                                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                                            <img
-                                                src={qrCodeUrl}
-                                                alt="QR Code"
-                                                className="rounded-lg shadow-lg"
-                                            />
-                                        </div>
-                                        <div className="text-center space-y-2">
-                                            <p className="text-gray-700 text-sm font-medium">
-                                                Scan to open on mobile
-                                            </p>
-                                            <p className="text-gray-500 text-xs">
-                                                Opens tempmail.sbs with your email
-                                            </p>
-                                            <button
-                                                onClick={downloadQRCode}
-                                                className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-medium px-4 py-2 rounded-lg transition-all text-sm flex items-center justify-center gap-2 mx-auto"
-                                            >
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    className="w-4 h-4"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                >
-                                                    <path
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                                                    />
-                                                </svg>
-                                                Download QR Code
-                                            </button>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-
-                            <button
-                                onClick={() => fetchMailDetails(true)}
-                                disabled={loading}
-                                className="bg-gradient-to-r from-blue-800 via-blue-500 to-indigo-500 bg-[length:300%_300%] animate-gradient-x text-white font-medium px-6 py-3 rounded-lg transition-all disabled:opacity-50 flex items-center justify-center gap-2"
-                            >
-                                {loading ? (
-                                    <>
-                                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                                        Generating...
-                                    </>
-                                ) : (
-                                    "Generate New Email"
-                                )}
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Custom Email Section */}
-                    <div className="space-y-6 p-6 bg-gray-900/50 rounded-xl border border-gray-700">
-                        <h2 className="text-xl font-semibold text-blue-300">
-                            Custom Email
-                        </h2>
-                        <div className="flex flex-col gap-4">
-                            <div className="relative size-full flex flex-col md:flex-row items-center rounded-lg border border-gray-600 bg-gray-800 text-blue-100">
-                                <input
-                                    ref={customInputRef}
-                                    type="text"
-                                    value={customLoading ? "Generating..." : customMail}
-                                    onChange={(e) => setCustomMail(e.target.value)}
-                                    disabled={customLoading}
-                                    className="w-full font-mono bg-transparent text-lg p-3 focus:outline-none focus:ring-1 focus:ring-blue- pr-0 md:pr-20"
-                                    placeholder="your name"
-                                />
-                                <select
-                                    value={selectedDomain}
-                                    onChange={(e) => setSelectedDomain(e.target.value)}
-                                    className="self-stretch md:self-auto p-3 bg-gray-800 text-gray-400 border-l border-gray-600 focus:outline-none"
-                                >
-                                    {domains.map((d) => (
-                                        <option key={d} value={d}>
-                                            @{d}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div>
-                            <button
-                                onClick={generateCustomMail}
-                                disabled={customLoading}
-                                className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-[length:300%_300%] animate-gradient-x text-white font-medium px-6 py-3 rounded-lg transition-all disabled:opacity-50"
-                            >
-                                {customLoading ? (
-                                    <>
-                                        <div className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                                        Creating...
-                                    </>
-                                ) : (
-                                    "Create Custom Email"
-                                )}
-                            </button>
-                        </div>
-                    </div>
+                {/* LEFT AD — xl screens only, sticky */}
+                <div className="hidden xl:flex flex-col items-center sticky top-8 min-w-[160px] pt-24">
+                    <p className="text-xs text-gray-600 uppercase tracking-widest mb-2">Ad</p>
+                    <SideBanner />
                 </div>
 
-                {/* Features Grid */}
-                <div className="grid md:grid-cols-3 gap-4 text-center mt-8">
-                    <div className="p-4 bg-gray-900/50 rounded-lg border border-gray-700">
-                        <h3 className="text-blue-400 font-medium">Secure</h3>
-                        <p className="text-sm text-gray-400 mt-1">End-to-end encryption</p>
-                    </div>
-                    <div className="p-4 bg-gray-900/50 rounded-lg border border-gray-700">
-                        <h3 className="text-blue-400 font-medium">Anonymous</h3>
-                        <p className="text-sm text-gray-400 mt-1">
-                            No personal data collected
+                {/* MAIN CONTENT */}
+                <div className="flex flex-col items-center w-full max-w-4xl">
+
+                    <div className="text-center mb-10">
+                        <h1 className="text-4xl md:text-5xl font-bold text-gray-100">
+                            Free Temporary Email
+                        </h1>
+                        <p className="text-gray-400 mt-4 text-lg max-w-2xl mx-auto leading-relaxed">
+                            Generate a disposable email address instantly to protect your privacy
+                            and keep your primary inbox free from spam.
                         </p>
                     </div>
-                    <div className="p-4 bg-gray-900/50 rounded-lg border border-gray-700">
-                        <h3 className="text-blue-400 font-medium">Temporary</h3>
-                        <p className="text-sm text-gray-400 mt-1">Auto-deletes in 1h</p>
+
+                    <div className="bg-gray-800/90 backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-gray-700 w-full space-y-8 relative">
+
+                        {showNotification && (
+                            <div className="animate-fade-in-down absolute top-4 right-4 bg-emerald-600/90 text-white px-4 py-2 rounded-lg text-sm shadow-md z-50">
+                                Copied to clipboard!
+                            </div>
+                        )}
+                        {errorMsg && (
+                            <div className="animate-fade-in-down absolute top-4 left-4 right-4 md:left-auto md:right-4 md:max-w-sm bg-red-600/90 text-white px-4 py-2 rounded-lg text-sm shadow-md z-50">
+                                ⚠️ {errorMsg}
+                            </div>
+                        )}
+
+                        <div className="grid md:grid-cols-2 gap-6">
+                            {/* Random Email */}
+                            <div className="space-y-6 p-6 bg-gray-900/50 rounded-xl border border-gray-700">
+                                <h2 className="text-xl font-semibold text-blue-300">Random Email</h2>
+                                <div className="flex flex-col gap-4">
+                                    <div className="space-y-3">
+                                        <div className="relative">
+                                            <input
+                                                ref={inputRef}
+                                                type="email"
+                                                value={loading ? "Generating..." : mail}
+                                                readOnly
+                                                className="w-full bg-gray-800 text-blue-100 font-mono text-lg p-3 rounded-lg border border-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 pr-20"
+                                                onFocus={(e) => e.target.select()}
+                                            />
+                                            <button
+                                                onClick={() => copyToClipboard(mail, inputRef)}
+                                                className="absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white p-2 rounded-lg shadow-md transition-all duration-200 group"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                                </svg>
+                                                <span className="absolute left-1/2 -translate-x-1/2 top-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs bg-gray-800 text-white px-2 py-1 rounded shadow-lg whitespace-nowrap z-10">
+                                                    Copy to clipboard
+                                                </span>
+                                            </button>
+                                        </div>
+
+                                        {mail && !loading && (
+                                            <button
+                                                onClick={() => setShowQR(!showQR)}
+                                                className="w-full bg-gray-700/50 hover:bg-gray-700 text-blue-300 font-medium px-4 py-2 rounded-lg transition-all flex items-center justify-center gap-2 border border-gray-600"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                                                </svg>
+                                                {showQR ? "Hide" : "Show"} QR Code
+                                            </button>
+                                        )}
+
+                                        {showQR && qrCodeUrl && (
+                                            <div className="bg-white p-4 rounded-xl animate-fade-in space-y-3">
+                                                <div className="flex justify-center">
+                                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                    <img src={qrCodeUrl} alt="QR Code" className="rounded-lg shadow-lg" />
+                                                </div>
+                                                <div className="text-center space-y-2">
+                                                    <p className="text-gray-700 text-sm font-medium">Scan to open on mobile</p>
+                                                    <p className="text-gray-500 text-xs">Opens tempmail.sbs with your email</p>
+                                                    <button
+                                                        onClick={downloadQRCode}
+                                                        className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-medium px-4 py-2 rounded-lg transition-all text-sm flex items-center justify-center gap-2 mx-auto"
+                                                    >
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                                        </svg>
+                                                        Download QR Code
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <button
+                                        onClick={() => fetchMailDetails(true)}
+                                        disabled={loading}
+                                        className="bg-gradient-to-r from-blue-800 via-blue-500 to-indigo-500 bg-[length:300%_300%] animate-gradient-x text-white font-medium px-6 py-3 rounded-lg transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+                                    >
+                                        {loading ? (
+                                            <><div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>Generating...</>
+                                        ) : "Generate New Email"}
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Custom Email */}
+                            <div className="space-y-6 p-6 bg-gray-900/50 rounded-xl border border-gray-700">
+                                <h2 className="text-xl font-semibold text-blue-300">Custom Email</h2>
+                                <div className="flex flex-col gap-4">
+                                    <div className="relative size-full flex flex-col md:flex-row items-center rounded-lg border border-gray-600 bg-gray-800 text-blue-100">
+                                        <input
+                                            ref={customInputRef}
+                                            type="text"
+                                            value={customLoading ? "Generating..." : customMail}
+                                            onChange={(e) => setCustomMail(e.target.value)}
+                                            disabled={customLoading}
+                                            className="w-full font-mono bg-transparent text-lg p-3 focus:outline-none focus:ring-1 focus:ring-blue- pr-0 md:pr-20"
+                                            placeholder="your name"
+                                        />
+                                        <select
+                                            value={selectedDomain}
+                                            onChange={(e) => setSelectedDomain(e.target.value)}
+                                            className="self-stretch md:self-auto p-3 bg-gray-800 text-gray-400 border-l border-gray-600 focus:outline-none"
+                                        >
+                                            {domains.map((d) => (
+                                                <option key={d} value={d}>@{d}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    <button
+                                        onClick={generateCustomMail}
+                                        disabled={customLoading}
+                                        className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-[length:300%_300%] animate-gradient-x text-white font-medium px-6 py-3 rounded-lg transition-all disabled:opacity-50"
+                                    >
+                                        {customLoading ? (
+                                            <><div className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>Creating...</>
+                                        ) : "Create Custom Email"}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Features Grid */}
+                        <div className="grid md:grid-cols-3 gap-4 text-center mt-8">
+                            <div className="p-4 bg-gray-900/50 rounded-lg border border-gray-700">
+                                <h3 className="text-blue-400 font-medium">Secure</h3>
+                                <p className="text-sm text-gray-400 mt-1">End-to-end encryption</p>
+                            </div>
+                            <div className="p-4 bg-gray-900/50 rounded-lg border border-gray-700">
+                                <h3 className="text-blue-400 font-medium">Anonymous</h3>
+                                <p className="text-sm text-gray-400 mt-1">No personal data collected</p>
+                            </div>
+                            <div className="p-4 bg-gray-900/50 rounded-lg border border-gray-700">
+                                <h3 className="text-blue-400 font-medium">Temporary</h3>
+                                <p className="text-sm text-gray-400 mt-1">Auto-deletes in 1h</p>
+                            </div>
+                        </div>
+
+                        {/* Footer */}
+                        <div className="mt-8">
+                            <p className="text-center text-sm text-gray-400 leading-relaxed mb-6">
+                                Protect your online privacy with temporary, secure email addresses.
+                                <br />
+                                No registration required • Completely anonymous • Free forever
+                            </p>
+                            <div className="pt-8 border-t border-gray-700/50 mt-8 mb-4">
+                                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-widest text-center mb-6">
+                                    Trusted & Featured On
+                                </h3>
+                                <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-6">
+                                    <a href="https://www.producthunt.com/products/tempmail-3" target="_blank" rel="noopener noreferrer">
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=423257&theme=dark" alt="TempMail.sbs on Product Hunt" className="h-10 hover:scale-105 transition-transform duration-200" />
+                                    </a>
+                                    <a href="https://startupfound.com/s/tempmailsbs" target="_blank" rel="noopener noreferrer">
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img src="https://startupfound.com/badges/badge-dark.svg" alt="Find TempMail.sbs on StartupFound" className="h-10 hover:scale-105 transition-transform duration-200 opacity-90 hover:opacity-100" />
+                                    </a>
+                                    <a href="https://startupfa.me/s/tempmailsbs?utm_source=www.tempmail.sbs" target="_blank" rel="noopener noreferrer">
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img src="https://startupfa.me/badges/featured-badge-small.webp" alt="TempMail.sbs - Featured on Startup Fame" className="h-9 hover:scale-105 transition-transform duration-200 object-contain opacity-90 hover:opacity-100 mix-blend-screen" />
+                                    </a>
+                                    <a href="https://wired.business" target="_blank" rel="noopener noreferrer">
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img src="https://wired.business/badge0-dark.svg" alt="Featured on Wired Business" className="h-10 hover:scale-105 transition-transform duration-200 opacity-90 hover:opacity-100" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-            {/* Footer Text */}
-            <div className="mt-8">
-                <p className="text-center text-sm text-gray-400 leading-relaxed mb-6">
-                    Protect your online privacy with temporary, secure email addresses.
-                    <br />
-                    No registration required • Completely anonymous • Free forever
-                </p>
-
-                {/* Featured On — Centered, both badges together */}
-                <div className="pt-8 border-t border-gray-700/50 mt-8 mb-4">
-                    <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-widest text-center mb-6">
-                        Trusted & Featured On
-                    </h3>
-                    <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-6">
-                        <a
-                            href="https://www.producthunt.com/products/tempmail-3"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=423257&theme=dark"
-                                alt="TempMail.sbs on Product Hunt"
-                                className="h-10 hover:scale-105 transition-transform duration-200"
-                            />
-                        </a>
-                        <a
-                            href="https://startupfound.com/s/tempmailsbs"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src="https://startupfound.com/badges/badge-dark.svg"
-                                alt="Find TempMail.sbs on StartupFound"
-                                className="h-10 hover:scale-105 transition-transform duration-200 opacity-90 hover:opacity-100"
-                            />
-                        </a>
-                        <a
-                            href="https://startupfa.me/s/tempmailsbs?utm_source=www.tempmail.sbs"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src="https://startupfa.me/badges/featured-badge-small.webp"
-                                alt="TempMail.sbs - Featured on Startup Fame"
-                                className="h-9 hover:scale-105 transition-transform duration-200 object-contain opacity-90 hover:opacity-100 mix-blend-screen"
-                            />
-                        </a>
-                        <a
-                            href="https://wired.business"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src="https://wired.business/badge0-dark.svg"
-                                alt="Featured on Wired Business"
-                                className="h-10 hover:scale-105 transition-transform duration-200 opacity-90 hover:opacity-100"
-                            />
-                        </a>
-                    </div>
+                {/* RIGHT AD — xl screens only, sticky */}
+                <div className="hidden xl:flex flex-col items-center sticky top-8 min-w-[160px] pt-24">
+                    <p className="text-xs text-gray-600 uppercase tracking-widest mb-2">Ad</p>
+                    <SideBanner />
                 </div>
+
             </div>
         </div>
-    </div>
-);
+    );
 }
