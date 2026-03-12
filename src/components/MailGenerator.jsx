@@ -3,34 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { API } from "@/utils/api";
 import QRCode from "qrcode";
-
-// 160x600 Side Banner Component
-function SideBanner() {
-    const ref = useRef(null);
-
-    useEffect(() => {
-        if (!ref.current) return;
-
-        const optScript = document.createElement("script");
-        optScript.innerHTML = `
-            atOptions = {
-                'key': '76212000070ff546cb6508fde55a2673',
-                'format': 'iframe',
-                'height': 600,
-                'width': 160,
-                'params': {}
-            };
-        `;
-        const invokeScript = document.createElement("script");
-        invokeScript.src = "https://www.highperformanceformat.com/76212000070ff546cb6508fde55a2673/invoke.js";
-        invokeScript.async = true;
-
-        ref.current.appendChild(optScript);
-        ref.current.appendChild(invokeScript);
-    }, []);
-
-    return <div ref={ref} className="w-[160px] h-[600px]" />;
-}
+import SideBanner from "./SideBanner";
 
 export default function EmailGenerator() {
     const [mail, setMail] = useState(null);
@@ -138,31 +111,21 @@ export default function EmailGenerator() {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 py-16 px-4">
-
-            {/* 3-column: LEFT AD | CONTENT | RIGHT AD */}
             <div className="flex items-start justify-center gap-4">
 
-                {/* LEFT AD — xl screens only, sticky */}
-                <div className="hidden xl:flex flex-col items-center sticky top-8 min-w-[160px] pt-24">
-                    <p className="text-xs text-gray-600 uppercase tracking-widest mb-2">Ad</p>
-                    <SideBanner />
-                </div>
+                {/* LEFT AD */}
+                <SideBanner />
 
                 {/* MAIN CONTENT */}
                 <div className="flex flex-col items-center w-full max-w-4xl">
-
                     <div className="text-center mb-10">
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-100">
-                            Free Temporary Email
-                        </h1>
+                        <h1 className="text-4xl md:text-5xl font-bold text-gray-100">Free Temporary Email</h1>
                         <p className="text-gray-400 mt-4 text-lg max-w-2xl mx-auto leading-relaxed">
-                            Generate a disposable email address instantly to protect your privacy
-                            and keep your primary inbox free from spam.
+                            Generate a disposable email address instantly to protect your privacy and keep your primary inbox free from spam.
                         </p>
                     </div>
 
                     <div className="bg-gray-800/90 backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-gray-700 w-full space-y-8 relative">
-
                         {showNotification && (
                             <div className="animate-fade-in-down absolute top-4 right-4 bg-emerald-600/90 text-white px-4 py-2 rounded-lg text-sm shadow-md z-50">
                                 Copied to clipboard!
@@ -223,10 +186,7 @@ export default function EmailGenerator() {
                                                 <div className="text-center space-y-2">
                                                     <p className="text-gray-700 text-sm font-medium">Scan to open on mobile</p>
                                                     <p className="text-gray-500 text-xs">Opens tempmail.sbs with your email</p>
-                                                    <button
-                                                        onClick={downloadQRCode}
-                                                        className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-medium px-4 py-2 rounded-lg transition-all text-sm flex items-center justify-center gap-2 mx-auto"
-                                                    >
+                                                    <button onClick={downloadQRCode} className="bg-gradient-to-r from-blue-500 to-blue-700 text-white font-medium px-4 py-2 rounded-lg text-sm flex items-center justify-center gap-2 mx-auto">
                                                         <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                                             <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                                         </svg>
@@ -260,7 +220,7 @@ export default function EmailGenerator() {
                                             value={customLoading ? "Generating..." : customMail}
                                             onChange={(e) => setCustomMail(e.target.value)}
                                             disabled={customLoading}
-                                            className="w-full font-mono bg-transparent text-lg p-3 focus:outline-none focus:ring-1 focus:ring-blue- pr-0 md:pr-20"
+                                            className="w-full font-mono bg-transparent text-lg p-3 focus:outline-none pr-0 md:pr-20"
                                             placeholder="your name"
                                         />
                                         <select
@@ -288,31 +248,26 @@ export default function EmailGenerator() {
 
                         {/* Features Grid */}
                         <div className="grid md:grid-cols-3 gap-4 text-center mt-8">
-                            <div className="p-4 bg-gray-900/50 rounded-lg border border-gray-700">
-                                <h3 className="text-blue-400 font-medium">Secure</h3>
-                                <p className="text-sm text-gray-400 mt-1">End-to-end encryption</p>
-                            </div>
-                            <div className="p-4 bg-gray-900/50 rounded-lg border border-gray-700">
-                                <h3 className="text-blue-400 font-medium">Anonymous</h3>
-                                <p className="text-sm text-gray-400 mt-1">No personal data collected</p>
-                            </div>
-                            <div className="p-4 bg-gray-900/50 rounded-lg border border-gray-700">
-                                <h3 className="text-blue-400 font-medium">Temporary</h3>
-                                <p className="text-sm text-gray-400 mt-1">Auto-deletes in 1h</p>
-                            </div>
+                            {[
+                                { title: "Secure", desc: "End-to-end encryption" },
+                                { title: "Anonymous", desc: "No personal data collected" },
+                                { title: "Temporary", desc: "Auto-deletes in 1h" },
+                            ].map((f) => (
+                                <div key={f.title} className="p-4 bg-gray-900/50 rounded-lg border border-gray-700">
+                                    <h3 className="text-blue-400 font-medium">{f.title}</h3>
+                                    <p className="text-sm text-gray-400 mt-1">{f.desc}</p>
+                                </div>
+                            ))}
                         </div>
 
                         {/* Footer */}
                         <div className="mt-8">
                             <p className="text-center text-sm text-gray-400 leading-relaxed mb-6">
                                 Protect your online privacy with temporary, secure email addresses.
-                                <br />
-                                No registration required • Completely anonymous • Free forever
+                                <br />No registration required • Completely anonymous • Free forever
                             </p>
                             <div className="pt-8 border-t border-gray-700/50 mt-8 mb-4">
-                                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-widest text-center mb-6">
-                                    Trusted & Featured On
-                                </h3>
+                                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-widest text-center mb-6">Trusted & Featured On</h3>
                                 <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-6">
                                     <a href="https://www.producthunt.com/products/tempmail-3" target="_blank" rel="noopener noreferrer">
                                         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -336,11 +291,8 @@ export default function EmailGenerator() {
                     </div>
                 </div>
 
-                {/* RIGHT AD — xl screens only, sticky */}
-                <div className="hidden xl:flex flex-col items-center sticky top-8 min-w-[160px] pt-24">
-                    <p className="text-xs text-gray-600 uppercase tracking-widest mb-2">Ad</p>
-                    <SideBanner />
-                </div>
+                {/* RIGHT AD */}
+                <SideBanner />
 
             </div>
         </div>

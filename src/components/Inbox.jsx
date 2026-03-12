@@ -1,38 +1,11 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { API } from "@/utils/api";
 import WhatIsTempMail from "./WhatIsTempMail";
 import DOMPurify from "dompurify";
 import FeedbackModal from "./Feedbackmodal";
-
-// 160x600 Side Banner Component
-function SideBanner() {
-    const ref = useRef(null);
-
-    useEffect(() => {
-        if (!ref.current) return;
-
-        const optScript = document.createElement("script");
-        optScript.innerHTML = `
-            atOptions = {
-                'key': '76212000070ff546cb6508fde55a2673',
-                'format': 'iframe',
-                'height': 600,
-                'width': 160,
-                'params': {}
-            };
-        `;
-        const invokeScript = document.createElement("script");
-        invokeScript.src = "https://www.highperformanceformat.com/76212000070ff546cb6508fde55a2673/invoke.js";
-        invokeScript.async = true;
-
-        ref.current.appendChild(optScript);
-        ref.current.appendChild(invokeScript);
-    }, []);
-
-    return <div ref={ref} className="w-[160px] h-[600px]" />;
-}
+import SideBanner from "./SideBanner";
 
 export default function Inbox() {
     const [inbox, setInbox] = useState([]);
@@ -45,14 +18,11 @@ export default function Inbox() {
         opened: false,
     });
 
-    const formatEmailBody = (text) => {
-        return DOMPurify.sanitize(text);
-    };
+    const formatEmailBody = (text) => DOMPurify.sanitize(text);
 
     const fetchInbox = async () => {
         const email = localStorage.getItem("email");
         if (!email) return;
-
         try {
             setLoading(true);
             const { data: response } = await API.get(`/inbox/${email}`);
@@ -63,11 +33,8 @@ export default function Inbox() {
                 }
             }
         } catch (error) {
-            if (error?.statusCode === 404) {
-                setInbox([]);
-            } else {
-                console.error("Error while fetching inbox mail", error);
-            }
+            if (error?.statusCode === 404) setInbox([]);
+            else console.error("Error while fetching inbox mail", error);
         } finally {
             setLoading(false);
         }
@@ -75,16 +42,8 @@ export default function Inbox() {
 
     useEffect(() => {
         const email = localStorage.getItem("email");
-        if (email) {
-            setEmailState((prev) => ({ ...prev, generated: true }));
-        }
+        if (email) setEmailState((prev) => ({ ...prev, generated: true }));
     }, []);
-
-    useEffect(() => {
-        if (emailState.received && !showFeedback) {
-            // Optional: Auto-show feedback after email arrives
-        }
-    }, [emailState.received, showFeedback]);
 
     useEffect(() => {
         fetchInbox();
@@ -109,81 +68,47 @@ export default function Inbox() {
             {/* 3-column: LEFT AD | INBOX | RIGHT AD */}
             <div className="flex items-start justify-center gap-4 w-full">
 
-                {/* LEFT AD — Desktop only */}
-                <div className="hidden xl:flex flex-col items-center sticky top-8 min-w-[160px]">
-                    <p className="text-xs text-gray-400 uppercase tracking-widest mb-2">Ad</p>
-                    <SideBanner />
-                </div>
+                {/* LEFT AD */}
+                <SideBanner />
 
-                {/* INBOX CONTENT */}
-                <div className="w-full max-w-3xl flex flex-col">
+                {/* INBOX */}
+                <div className="w-full max-w-3xl">
                     <div className="bg-white rounded-md shadow-md h-[500px] overflow-y-auto relative">
-
                         {selectedEmail ? (
                             <div className="p-6">
-                                <button
-                                    onClick={() => setSelectedEmail(null)}
-                                    className="mb-4 text-blue-600 hover:underline font-medium"
-                                >
+                                <button onClick={() => setSelectedEmail(null)} className="mb-4 text-blue-600 hover:underline font-medium">
                                     ← Back to Inbox
                                 </button>
-
                                 <div className="flex items-center justify-between">
                                     <div className="flex gap-4">
                                         <div className="relative size-12 sm:size-14 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 shadow-sm flex items-center justify-center">
                                             {selectedEmail.from ? (
                                                 <span className="text-xl font-medium text-gray-700 uppercase">
-                                                    {selectedEmail.from
-                                                        .split("<")[0]
-                                                        .trim()
-                                                        .split(/\s+/)
-                                                        .map((n) => n[0])
-                                                        .join("")
-                                                        .slice(0, 2)}
+                                                    {selectedEmail.from.split("<")[0].trim().split(/\s+/).map((n) => n[0]).join("").slice(0, 2)}
                                                 </span>
-                                            ) : (
-                                                <svg className="w-6 h-6 text-gray-400" />
-                                            )}
+                                            ) : <svg className="w-6 h-6 text-gray-400" />}
                                             <div className="absolute inset-0 rounded-full shadow-inner" />
                                         </div>
                                         <div className="flex flex-col gap-2">
-                                            <div className="text-sm font-semibold">
-                                                {selectedEmail.from.split("<")[0]}
-                                            </div>
-                                            <div className="text-sm">
-                                                {selectedEmail.from
-                                                    .split("<")[1]
-                                                    ?.replace("<", "")
-                                                    ?.replace(">", "")}
-                                            </div>
+                                            <div className="text-sm font-semibold">{selectedEmail.from.split("<")[0]}</div>
+                                            <div className="text-sm">{selectedEmail.from.split("<")[1]?.replace("<", "")?.replace(">", "")}</div>
                                         </div>
                                     </div>
-
                                     <div className="block">
                                         <div className="text-lg">Date</div>
-                                        <div className="text-sm">
-                                            {selectedEmail.date?.split("+")[0]}
-                                        </div>
+                                        <div className="text-sm">{selectedEmail.date?.split("+")[0]}</div>
                                     </div>
                                 </div>
-
                                 {selectedEmail.subject && (
-                                    <div className="block text-sm my-2 border p-2">
-                                        Subject: {selectedEmail.subject}
-                                    </div>
+                                    <div className="block text-sm my-2 border p-2">Subject: {selectedEmail.subject}</div>
                                 )}
-
-                                <div
-                                    className="max-w-none block size-full relative overflow-hidden overflow-y-auto"
-                                    dangerouslySetInnerHTML={{
-                                        __html: formatEmailBody(selectedEmail.html),
-                                    }}
+                                <div className="max-w-none block size-full relative overflow-hidden overflow-y-auto"
+                                    dangerouslySetInnerHTML={{ __html: formatEmailBody(selectedEmail.html) }}
                                 />
                             </div>
                         ) : (
                             <>
-                                {/* Inbox Header */}
-                                <div className="bg-[#111827] text-white px-4 py-3 font-semibold text-lg relative">
+                                <div className="bg-[#111827] text-white px-4 py-3 font-semibold text-lg">
                                     <div className="flex items-center justify-between">
                                         <span>Inbox ({inbox.length})</span>
                                         <button
@@ -196,17 +121,11 @@ export default function Inbox() {
                                         </button>
                                     </div>
                                 </div>
-
-                                {/* Column Headers */}
                                 <div className="bg-gray-200 px-4 py-2 font-semibold grid grid-cols-3 text-sm border-b border-gray-300">
-                                    <span>SENDER</span>
-                                    <span>SUBJECT</span>
-                                    <span className="text-center">VIEW</span>
+                                    <span>SENDER</span><span>SUBJECT</span><span className="text-center">VIEW</span>
                                 </div>
-
-                                {/* Email List */}
                                 {loading ? (
-                                    <div className="p-4 space-y-4 animate-pulse duration-700">
+                                    <div className="p-4 space-y-4 animate-pulse">
                                         {[...Array(5)].map((_, i) => (
                                             <div key={i} className="grid grid-cols-3 items-center px-4 py-3">
                                                 <div className="flex items-center space-x-3">
@@ -219,26 +138,14 @@ export default function Inbox() {
                                         ))}
                                     </div>
                                 ) : inbox.length === 0 ? (
-                                    <div className="p-6 text-center text-gray-500">
-                                        Waiting for incoming emails...
-                                    </div>
+                                    <div className="p-6 text-center text-gray-500">Waiting for incoming emails...</div>
                                 ) : (
                                     <div className="divide-y">
                                         {inbox.map((email, i) => (
-                                            <div
-                                                key={i}
-                                                className="grid grid-cols-3 items-center px-4 py-3 cursor-pointer hover:bg-gray-50 transition"
-                                                onClick={() => handleEmailClick(email)}
-                                            >
-                                                <div className="font-medium truncate">
-                                                    {email.from ? email.from.split("<")[0] : "Unknown Sender"}
-                                                </div>
-                                                <div className="text-sm text-gray-600 truncate">
-                                                    {email.subject}
-                                                </div>
-                                                <div className="text-center text-blue-600 hover:underline text-sm">
-                                                    View
-                                                </div>
+                                            <div key={i} className="grid grid-cols-3 items-center px-4 py-3 cursor-pointer hover:bg-gray-50 transition" onClick={() => handleEmailClick(email)}>
+                                                <div className="font-medium truncate">{email.from ? email.from.split("<")[0] : "Unknown Sender"}</div>
+                                                <div className="text-sm text-gray-600 truncate">{email.subject}</div>
+                                                <div className="text-center text-blue-600 hover:underline text-sm">View</div>
                                             </div>
                                         ))}
                                     </div>
@@ -248,22 +155,11 @@ export default function Inbox() {
                     </div>
                 </div>
 
-                {/* RIGHT AD — Desktop only */}
-                <div className="hidden xl:flex flex-col items-center sticky top-8 min-w-[160px]">
-                    <p className="text-xs text-gray-400 uppercase tracking-widest mb-2">Ad</p>
-                    <SideBanner />
-                </div>
-
+                {/* RIGHT AD */}
+                <SideBanner />
             </div>
 
-            {/* Feedback Modal */}
-            {showFeedback && (
-                <FeedbackModal
-                    onClose={() => setShowFeedback(false)}
-                    emailState={emailState}
-                />
-            )}
-
+            {showFeedback && <FeedbackModal onClose={() => setShowFeedback(false)} emailState={emailState} />}
             <WhatIsTempMail />
         </div>
     );
